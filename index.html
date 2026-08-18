@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>O-O Polaroid — Instant Film Studio</title>
+<meta name="description" content="O-O Polaroid — an analog instant film studio in Ho Chi Minh City, shot on genuine Polaroid cameras. View the menu and book a session." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__brand">
+    <img src="assets/logo.png" alt="O-O Polaroid" />
+    <span>O-O Polaroid</span>
+  </a>
+  <div class="nav__right">
+    <div class="nav__links" id="navLinks">
+      <a href="#story" data-vi="Câu chuyện">Story</a>
+      <a href="#cameras" data-vi="Máy &amp; Menu">Cameras &amp; Menu</a>
+      <a href="#space" data-vi="Không gian">Space</a>
+      <a href="#visit" data-vi="Ghé thăm">Visit</a>
+    </div>
+    <div class="lang-toggle lang-toggle--nav" role="group" aria-label="Site language">
+      <button type="button" class="lang-toggle__btn is-active" data-lang="en">EN</button>
+      <button type="button" class="lang-toggle__btn" data-lang="vi">VI</button>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__grain" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="eyebrow" data-vi="Studio ảnh lấy liền · TP. Hồ Chí Minh">Instant Film Studio · Ho Chi Minh City</p>
+    <h1><span data-vi="Một tấm ảnh thật,">A real photograph,</span><br /><span data-vi="không thể chụp lại lần hai.">impossible to take twice.</span></h1>
+    <p class="hero__lede" data-vi="Máy ảnh Polaroid analog chính hãng, phim hoá học thật, và một khoảnh khắc chờ ảnh hiện hình mà không nút bấm kỹ thuật số nào tái tạo được.">
+      Genuine analog Polaroid cameras, real chemical film, and a moment of
+      waiting for the picture to develop that no digital shutter can recreate.
+    </p>
+    <div class="hero__actions">
+      <a href="#cameras" class="btn btn--dark" data-vi="Xem menu">View menu</a>
+      <a href="#visit" class="btn btn--ghost" data-vi="Đặt lịch chụp">Book a session</a>
+    </div>
+  </div>
+  <div class="hero__polaroid" aria-hidden="true">
+    <img src="assets/samples/sample-05.jpg" alt="" loading="eager" />
+  </div>
+</header>
+
+<main>
+
+  <section class="story" id="story">
+    <div class="story__mark">01</div>
+    <div class="story__content">
+      <h2><span data-vi="Không phải Instax.">Not Instax.</span><br /><span data-vi="Không phải photobooth.">Not a photobooth.</span></h2>
+      <p data-vi="Phần lớn ảnh &quot;lấy liền&quot; ở Việt Nam là ảnh in kỹ thuật số hoặc phim Instax phổ thông. O-O Polaroid dùng đúng máy ảnh phim Polaroid analog — mỗi tấm là một phản ứng hoá học thật, độc bản, không có bản sao.">
+        Most "instant" photos in Vietnam are digital prints or standard
+        Instax film. O-O Polaroid uses genuine analog Polaroid cameras —
+        every shot is a real chemical reaction, one of a kind, no copies.
+      </p>
+      <p data-vi="Máy tự động lấy nét và đo sáng, bạn tự tay chụp lấy khoảnh khắc của mình. Muốn có người đồng hành, chọn gói Cao Cấp — nhiếp ảnh gia sẽ tư vấn góc máy và bấm giúp bạn.">
+        The camera auto-focuses and auto-exposes, so you shoot the moment
+        yourself. Want company? Add the Premium package and a photographer
+        will guide the shot for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="cameras" id="cameras">
+    <div class="section-head">
+      <div class="story__mark">02</div>
+      <h2 data-vi="Máy &amp; Menu">Cameras &amp; Menu</h2>
+      <p data-vi="Chọn một máy để xem ảnh mẫu và bảng giá của máy đó.">Pick a camera to see sample shots and its price list.</p>
+    </div>
+    <p class="cameras__swipehint" data-vi="← vuốt để chọn →">← swipe to choose →</p>
+    <div class="cameras__grid">
+
+      <article class="camera-card camera-card--chrome">
+        <button class="camera-card__open" data-modal="modal-macro5">
+          <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="20" width="28" height="65" rx="14" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="29" cy="33" r="6" fill="#7B2737"/>
+            <rect x="38" y="15" width="64" height="70" rx="10" stroke="#2A2420" stroke-width="3"/>
+            <rect x="46" y="46" width="12" height="26" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <rect x="86" y="46" width="12" height="26" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="70" cy="58" r="12" stroke="#2A2420" stroke-width="3"/>
+            <rect x="60" y="22" width="20" height="11" rx="2" stroke="#2A2420" stroke-width="3"/>
+          </svg>
+          <p class="camera-card__name">Macro 5 SLR</p>
+        </button>
+      </article>
+
+      <article class="camera-card camera-card--honey">
+        <button class="camera-card__open" data-modal="modal-sun660">
+          <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 78 L18 46 L52 22 L100 22 L100 78 Z" stroke="#2A2420" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="46" cy="50" r="15" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="46" cy="50" r="5" fill="#2A2420"/>
+            <rect x="82" y="28" width="15" height="10" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <path d="M30 78 L24 88" stroke="#2A2420" stroke-width="3" stroke-linecap="round"/>
+            <path d="M90 78 L96 88" stroke="#2A2420" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <p class="camera-card__name">Polaroid Sun 660</p>
+        </button>
+      </article>
+
+      <article class="camera-card camera-card--beige">
+        <button class="camera-card__open" data-modal="modal-impulse">
+          <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="48" width="90" height="34" rx="6" stroke="#2A2420" stroke-width="3"/>
+            <rect x="56" y="40" width="10" height="10" stroke="#2A2420" stroke-width="3"/>
+            <rect x="42" y="18" width="38" height="24" rx="3" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="53" cy="65" r="10" stroke="#2A2420" stroke-width="3"/>
+            <rect x="80" y="55" width="14" height="10" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <line x1="15" y1="58" x2="105" y2="58" stroke="#7B2737" stroke-width="3"/>
+          </svg>
+          <p class="camera-card__name">Polaroid Impulse</p>
+        </button>
+      </article>
+
+      <article class="camera-card camera-card--burgundy">
+        <button class="camera-card__open" data-modal="modal-now3">
+          <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="15" width="90" height="70" rx="14" stroke="#2A2420" stroke-width="3"/>
+            <rect x="50" y="19" width="7" height="5" fill="#7B2737"/>
+            <rect x="58" y="19" width="7" height="5" fill="#B88752"/>
+            <rect x="66" y="19" width="7" height="5" fill="#77765E"/>
+            <circle cx="30" cy="36" r="9" stroke="#2A2420" stroke-width="3"/>
+            <rect x="85" y="29" width="14" height="12" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="60" cy="56" r="16" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="60" cy="56" r="6" fill="#2A2420"/>
+            <circle cx="28" cy="75" r="6" fill="#7B2737"/>
+          </svg>
+          <p class="camera-card__name">Polaroid Now 3+</p>
+        </button>
+      </article>
+
+      <article class="camera-card camera-card--olive">
+        <button class="camera-card__open" data-modal="modal-studioexpress">
+          <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="36" width="65" height="49" rx="8" stroke="#2A2420" stroke-width="3"/>
+            <path d="M95 42 C 108 46, 108 62, 95 66" stroke="#2A2420" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <line x1="60" y1="36" x2="60" y2="18" stroke="#2A2420" stroke-width="3"/>
+            <rect x="45" y="6" width="30" height="14" rx="3" stroke="#2A2420" stroke-width="3"/>
+            <rect x="9" y="27" width="21" height="16" rx="2" stroke="#2A2420" stroke-width="3" transform="rotate(-8 19 35)"/>
+            <circle cx="48" cy="53" r="6" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="67" cy="53" r="6" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="48" cy="70" r="6" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="67" cy="70" r="6" stroke="#2A2420" stroke-width="3"/>
+          </svg>
+          <p class="camera-card__name">Polaroid Studio Express</p>
+        </button>
+      </article>
+
+    </div>
+
+    <!-- Camera detail modals — notebook style: sample photos page + info & pricing page -->
+
+    <dialog class="camera-modal" id="modal-macro5">
+      <button class="camera-modal__close" aria-label="Close" data-vi-aria-label="Đóng">×</button>
+      <div class="camera-modal__book">
+        <div class="camera-modal__page camera-modal__page--photos">
+          <p class="camera-modal__pagelabel">01 · Macro 5 SLR</p>
+          <div class="camera-modal__photogrid">
+            <img src="assets/samples/sample-01.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-02.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-03.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-04.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
+        <div class="camera-modal__page camera-modal__page--info">
+          <div class="camera-modal__heading">
+            <svg class="camera-modal__icon camera-modal__icon--chrome" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="20" width="28" height="65" rx="14" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="29" cy="33" r="6" fill="#7B2737"/>
+              <rect x="38" y="15" width="64" height="70" rx="10" stroke="#2A2420" stroke-width="3"/>
+              <rect x="46" y="46" width="12" height="26" rx="2" stroke="#2A2420" stroke-width="3"/>
+              <rect x="86" y="46" width="12" height="26" rx="2" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="70" cy="58" r="12" stroke="#2A2420" stroke-width="3"/>
+              <rect x="60" y="22" width="20" height="11" rx="2" stroke="#2A2420" stroke-width="3"/>
+            </svg>
+            <div>
+              <p class="camera-modal__eyebrow">01</p>
+              <h3>Macro 5 SLR</h3>
+            </div>
+          </div>
+          <p class="camera-modal__desc" data-vi="Hệ thống macro 5-trong-1 để chụp cận cảnh — nhẫn, hình xăm, chi tiết nhỏ.">5-in-1 macro system for extreme close-ups — rings, tattoos, tiny details.</p>
+          <div class="camera-modal__meta">
+            <div><span data-vi="Thời gian">Session</span><strong data-vi="~10 phút">~10 min</strong></div>
+            <div><span data-vi="Số người">People</span><strong>1–2</strong></div>
+          </div>
+          <p class="camera-modal__label" data-vi="Bao gồm">Session includes</p>
+          <ul class="camera-modal__includes">
+            <li data-vi="Đã bao gồm máy và phim">Camera and film included</li>
+            <li data-vi="Có nhân viên hỗ trợ khi cần">A staff member on hand to help</li>
+            <li data-vi="Có thời gian thử vài kiểu">Time to try a few takes</li>
+          </ul>
+          <p class="camera-modal__label" data-vi="Bảng giá">Pricing</p>
+          <div class="camera-modal__prices">
+            <p class="camera-card__filmname">Color 600 Film</p>
+            <div><span data-vi="1 tấm">1 print</span><strong>170,000₫</strong></div>
+            <div><span data-vi="Combo 2 tấm">Set of 2</span><strong>330,000₫</strong></div>
+            <div><span data-vi="Combo 4 tấm">Set of 4</span><strong>650,000₫</strong></div>
+            <div><span data-vi="Combo 8 tấm">Set of 8</span><strong>1,250,000₫</strong></div>
+            <p class="camera-card__filmname">Color 600 Round</p>
+            <div><span data-vi="1 tấm">1 print</span><strong>190,000₫</strong></div>
+            <div><span data-vi="Combo 2 tấm">Set of 2</span><strong>370,000₫</strong></div>
+            <div><span data-vi="Combo 4 tấm">Set of 4</span><strong>720,000₫</strong></div>
+            <div><span data-vi="Combo 8 tấm">Set of 8</span><strong>1,390,000₫</strong></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="camera-modal" id="modal-sun660">
+      <button class="camera-modal__close" aria-label="Close" data-vi-aria-label="Đóng">×</button>
+      <div class="camera-modal__book">
+        <div class="camera-modal__page camera-modal__page--photos">
+          <p class="camera-modal__pagelabel">02 · Polaroid Sun 660</p>
+          <div class="camera-modal__photogrid">
+            <img src="assets/samples/sample-01.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-02.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-03.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-04.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
+        <div class="camera-modal__page camera-modal__page--info">
+          <div class="camera-modal__heading">
+            <svg class="camera-modal__icon camera-modal__icon--honey" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 78 L18 46 L52 22 L100 22 L100 78 Z" stroke="#2A2420" stroke-width="3" stroke-linejoin="round"/>
+              <circle cx="46" cy="50" r="15" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="46" cy="50" r="5" fill="#2A2420"/>
+              <rect x="82" y="28" width="15" height="10" rx="2" stroke="#2A2420" stroke-width="3"/>
+              <path d="M30 78 L24 88" stroke="#2A2420" stroke-width="3" stroke-linecap="round"/>
+              <path d="M90 78 L96 88" stroke="#2A2420" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <p class="camera-modal__eyebrow">02</p>
+              <h3>Polaroid Sun 660</h3>
+            </div>
+          </div>
+          <p class="camera-modal__desc" data-vi="Máy SLR gập cổ điển, lấy nét mềm và tông màu ấm hoài cổ.">A classic folding SLR with soft focus and warm, vintage tones.</p>
+          <div class="camera-modal__meta">
+            <div><span data-vi="Thời gian">Session</span><strong data-vi="~10 phút">~10 min</strong></div>
+            <div><span data-vi="Số người">People</span><strong>1–4</strong></div>
+          </div>
+          <p class="camera-modal__label" data-vi="Bao gồm">Session includes</p>
+          <ul class="camera-modal__includes">
+            <li data-vi="Đã bao gồm máy và phim">Camera and film included</li>
+            <li data-vi="Có nhân viên hỗ trợ khi cần">A staff member on hand to help</li>
+            <li data-vi="Có thời gian thử vài kiểu">Time to try a few takes</li>
+          </ul>
+          <p class="camera-modal__label" data-vi="Bảng giá">Pricing</p>
+          <div class="camera-modal__prices">
+            <p class="camera-card__filmname" data-vi="Color 600 Film B&amp;W">Color 600 Film B&amp;W <span class="camera-card__soon" data-vi="(sắp có hàng)">(coming soon)</span></p>
+            <p class="camera-card__filmname">Color 600 Round</p>
+            <div><span data-vi="1 tấm">1 print</span><strong>190,000₫</strong></div>
+            <div><span data-vi="Combo 2 tấm">Set of 2</span><strong>370,000₫</strong></div>
+            <div><span data-vi="Combo 4 tấm">Set of 4</span><strong>720,000₫</strong></div>
+            <div><span data-vi="Combo 8 tấm">Set of 8</span><strong>1,390,000₫</strong></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="camera-modal" id="modal-impulse">
+      <button class="camera-modal__close" aria-label="Close" data-vi-aria-label="Đóng">×</button>
+      <div class="camera-modal__book">
+        <div class="camera-modal__page camera-modal__page--photos">
+          <p class="camera-modal__pagelabel">03 · Polaroid Impulse</p>
+          <div class="camera-modal__photogrid">
+            <img src="assets/samples/sample-01.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-02.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-03.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-04.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
+        <div class="camera-modal__page camera-modal__page--info">
+          <div class="camera-modal__heading">
+            <svg class="camera-modal__icon camera-modal__icon--beige" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="48" width="90" height="34" rx="6" stroke="#2A2420" stroke-width="3"/>
+              <rect x="56" y="40" width="10" height="10" stroke="#2A2420" stroke-width="3"/>
+              <rect x="42" y="18" width="38" height="24" rx="3" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="53" cy="65" r="10" stroke="#2A2420" stroke-width="3"/>
+              <rect x="80" y="55" width="14" height="10" rx="2" stroke="#2A2420" stroke-width="3"/>
+              <line x1="15" y1="58" x2="105" y2="58" stroke="#7B2737" stroke-width="3"/>
+            </svg>
+            <div>
+              <p class="camera-modal__eyebrow">03</p>
+              <h3>Polaroid Impulse</h3>
+            </div>
+          </div>
+          <p class="camera-modal__desc" data-vi="Đơn giản kiểu point-and-shoot thập niên 90 — nhanh, dễ, không cầu kỳ.">Point-and-shoot simplicity from the 90s — fast, easy, no fuss.</p>
+          <div class="camera-modal__meta">
+            <div><span data-vi="Thời gian">Session</span><strong data-vi="~10 phút">~10 min</strong></div>
+            <div><span data-vi="Số người">People</span><strong>1–4</strong></div>
+          </div>
+          <p class="camera-modal__label" data-vi="Bao gồm">Session includes</p>
+          <ul class="camera-modal__includes">
+            <li data-vi="Đã bao gồm máy và phim">Camera and film included</li>
+            <li data-vi="Có nhân viên hỗ trợ khi cần">A staff member on hand to help</li>
+            <li data-vi="Có thời gian thử vài kiểu">Time to try a few takes</li>
+          </ul>
+          <p class="camera-modal__label" data-vi="Bảng giá">Pricing</p>
+          <div class="camera-modal__prices">
+            <p class="camera-card__filmname" data-vi="Color 600 Film B&amp;W">Color 600 Film B&amp;W <span class="camera-card__soon" data-vi="(sắp có hàng)">(coming soon)</span></p>
+            <p class="camera-card__filmname">Color 600 Round</p>
+            <div><span data-vi="1 tấm">1 print</span><strong>190,000₫</strong></div>
+            <div><span data-vi="Combo 2 tấm">Set of 2</span><strong>370,000₫</strong></div>
+            <div><span data-vi="Combo 4 tấm">Set of 4</span><strong>720,000₫</strong></div>
+            <div><span data-vi="Combo 8 tấm">Set of 8</span><strong>1,390,000₫</strong></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="camera-modal" id="modal-now3">
+      <button class="camera-modal__close" aria-label="Close" data-vi-aria-label="Đóng">×</button>
+      <div class="camera-modal__book">
+        <div class="camera-modal__page camera-modal__page--photos">
+          <p class="camera-modal__pagelabel">04 · Polaroid Now 3+</p>
+          <div class="camera-modal__photogrid">
+            <img src="assets/samples/sample-01.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-02.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-03.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-04.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
+        <div class="camera-modal__page camera-modal__page--info">
+          <div class="camera-modal__heading">
+            <svg class="camera-modal__icon camera-modal__icon--burgundy" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="15" width="90" height="70" rx="14" stroke="#2A2420" stroke-width="3"/>
+              <rect x="50" y="19" width="7" height="5" fill="#7B2737"/>
+              <rect x="58" y="19" width="7" height="5" fill="#B88752"/>
+              <rect x="66" y="19" width="7" height="5" fill="#77765E"/>
+              <circle cx="30" cy="36" r="9" stroke="#2A2420" stroke-width="3"/>
+              <rect x="85" y="29" width="14" height="12" rx="2" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="60" cy="56" r="16" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="60" cy="56" r="6" fill="#2A2420"/>
+              <circle cx="28" cy="75" r="6" fill="#7B2737"/>
+            </svg>
+            <div>
+              <p class="camera-modal__eyebrow">04</p>
+              <h3>Polaroid Now 3+</h3>
+            </div>
+          </div>
+          <p class="camera-modal__desc" data-vi="Máy linh hoạt nhất — tự động lấy nét, phơi sáng kép, dùng được cả 2 loại phim.">Our most flexible camera — autofocus, double exposure, shoots both film types.</p>
+          <div class="camera-modal__meta">
+            <div><span data-vi="Thời gian">Session</span><strong data-vi="~10 phút">~10 min</strong></div>
+            <div><span data-vi="Số người">People</span><strong>1–6</strong></div>
+          </div>
+          <p class="camera-modal__label" data-vi="Bao gồm">Session includes</p>
+          <ul class="camera-modal__includes">
+            <li data-vi="Đã bao gồm máy và phim">Camera and film included</li>
+            <li data-vi="Có nhân viên hỗ trợ khi cần">A staff member on hand to help</li>
+            <li data-vi="Có thời gian thử vài kiểu">Time to try a few takes</li>
+          </ul>
+          <p class="camera-modal__label" data-vi="Bảng giá">Pricing</p>
+          <div class="camera-modal__prices">
+            <p class="camera-card__filmname">Color i-Type Film</p>
+            <div><span data-vi="1 tấm">1 print</span><strong>150,000₫</strong></div>
+            <div><span data-vi="Combo 2 tấm">Set of 2</span><strong>290,000₫</strong></div>
+            <div><span data-vi="Combo 4 tấm">Set of 4</span><strong>560,000₫</strong></div>
+            <div><span data-vi="Combo 8 tấm">Set of 8</span><strong>1,100,000₫</strong></div>
+            <p class="camera-card__filmname">Color 600 Film</p>
+            <div><span data-vi="1 tấm">1 print</span><strong>170,000₫</strong></div>
+            <div><span data-vi="Combo 2 tấm">Set of 2</span><strong>330,000₫</strong></div>
+            <div><span data-vi="Combo 4 tấm">Set of 4</span><strong>650,000₫</strong></div>
+            <div><span data-vi="Combo 8 tấm">Set of 8</span><strong>1,250,000₫</strong></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="camera-modal" id="modal-studioexpress">
+      <button class="camera-modal__close" aria-label="Close" data-vi-aria-label="Đóng">×</button>
+      <div class="camera-modal__book">
+        <div class="camera-modal__page camera-modal__page--photos">
+          <p class="camera-modal__pagelabel">05 · Polaroid Studio Express</p>
+          <div class="camera-modal__photogrid">
+            <img src="assets/samples/sample-01.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-02.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-03.jpg" alt="" loading="lazy" />
+            <img src="assets/samples/sample-04.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
+        <div class="camera-modal__page camera-modal__page--info">
+          <div class="camera-modal__heading">
+            <svg class="camera-modal__icon camera-modal__icon--olive" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="36" width="65" height="49" rx="8" stroke="#2A2420" stroke-width="3"/>
+              <path d="M95 42 C 108 46, 108 62, 95 66" stroke="#2A2420" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <line x1="60" y1="36" x2="60" y2="18" stroke="#2A2420" stroke-width="3"/>
+              <rect x="45" y="6" width="30" height="14" rx="3" stroke="#2A2420" stroke-width="3"/>
+              <rect x="9" y="27" width="21" height="16" rx="2" stroke="#2A2420" stroke-width="3" transform="rotate(-8 19 35)"/>
+              <circle cx="48" cy="53" r="6" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="67" cy="53" r="6" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="48" cy="70" r="6" stroke="#2A2420" stroke-width="3"/>
+              <circle cx="67" cy="70" r="6" stroke="#2A2420" stroke-width="3"/>
+            </svg>
+            <div>
+              <p class="camera-modal__eyebrow">05</p>
+              <h3>Polaroid Studio Express</h3>
+            </div>
+          </div>
+          <p class="camera-modal__desc" data-vi="Bộ 4 ống kính studio gắn chân máy, cho phong cách chân dung chuyên nghiệp hơn.">A quad-lens studio rig on a tripod, for a more editorial portrait look.</p>
+          <div class="camera-modal__meta">
+            <div><span data-vi="Thời gian">Session</span><strong data-vi="~15 phút">~15 min</strong></div>
+            <div><span data-vi="Số người">People</span><strong>1–3</strong></div>
+          </div>
+          <p class="camera-modal__label" data-vi="Bao gồm">Session includes</p>
+          <ul class="camera-modal__includes">
+            <li data-vi="Đã bao gồm máy và phim">Camera and film included</li>
+            <li data-vi="Có nhân viên hỗ trợ khi cần">A staff member on hand to help</li>
+            <li data-vi="Có thời gian thử vài kiểu">Time to try a few takes</li>
+          </ul>
+          <p class="camera-modal__label" data-vi="Bảng giá">Pricing</p>
+          <div class="camera-modal__prices">
+            <p class="camera-card__filmname">Instax Wide</p>
+            <div><span data-vi="1 tấm">1 print</span><strong>250,000₫</strong></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="section-head">
+      <div class="story__mark">03</div>
+      <h2 data-vi="Ảnh thật, chưa chỉnh sửa">Real photos, unedited</h2>
+      <p data-vi="Chụp thử tại studio — đúng màu, đúng hạt phim, không lọc.">Shot at the studio — true color, true grain, no filters.</p>
+    </div>
+    <div class="gallery__grid">
+      <img src="assets/samples/sample-01.jpg" alt="Polaroid photo taken at O-O Polaroid" loading="lazy" />
+      <img src="assets/samples/sample-02.jpg" alt="Polaroid photo taken at O-O Polaroid" loading="lazy" />
+      <img src="assets/samples/sample-03.jpg" alt="Polaroid photo taken at O-O Polaroid" loading="lazy" />
+      <img src="assets/samples/sample-04.jpg" alt="Polaroid photo taken at O-O Polaroid" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="space" id="space">
+    <div class="section-head">
+      <div class="story__mark">04</div>
+      <h2 data-vi="Ba buồng riêng, một phòng lớn">Three booths, one big room</h2>
+    </div>
+    <div class="space__grid">
+      <div class="space__card">
+        <span class="space__num" data-vi="×3 Buồng riêng">×3 Self-Booths</span>
+        <h3 data-vi="Buồng tự chụp riêng tư">Private Self-Booths</h3>
+        <p data-vi="Ba buồng riêng để tự chụp — chỉ có bạn, máy ảnh, và không gian riêng tư thoải mái, không cần chia sẻ với ai.">
+          Three private booths for self-timer shoots — just you, the camera,
+          and a space all to yourselves.
+        </p>
+      </div>
+      <div class="space__card">
+        <span class="space__num" data-vi="Phòng nhóm">Group Room</span>
+        <h3 data-vi="Phòng Lớn">The Big Room</h3>
+        <p data-vi="Một phòng rộng cho nhóm đông — từ 3 người trở lên, đủ không gian để cả nhóm cùng tạo dáng.">
+          One large room for bigger groups — 3 people or more, with space
+          to set up and shoot together.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="visit__inner">
+      <h2 data-vi="Ghé thăm O-O Polaroid">Visit O-O Polaroid</h2>
+      <p data-vi="Đặt lịch trước để chắc chắn có chỗ — đặc biệt vào cuối tuần.">Book ahead to guarantee a spot — especially on weekends.</p>
+      <div class="visit__actions">
+        <a href="https://www.instagram.com/oo.sgn/" class="btn btn--dark" target="_blank" rel="noopener" data-vi="Nhắn Instagram để đặt lịch">Message us on Instagram to book</a>
+      </div>
+      <dl class="visit__details">
+        <div><dt data-vi="Địa chỉ">Address</dt><dd data-vi="161/4 Nguyễn Văn Thủ, Tân Định, TP. Hồ Chí Minh">161/4 Nguyen Van Thu, Tan Dinh, Ho Chi Minh City</dd></div>
+        <div><dt data-vi="Giờ mở cửa">Opening hours</dt><dd data-vi="10:00 – 21:00, hằng ngày">10:00 AM – 9:00 PM, daily</dd></div>
+        <div><dt>Instagram</dt><dd>@oo.sgn</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <img src="assets/logo.png" alt="O-O Polaroid" />
+  <p>© <span id="year"></span> <span data-vi="O-O Polaroid. Analog thật, một bản duy nhất.">O-O Polaroid. Real analog, one of a kind.</span></p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
