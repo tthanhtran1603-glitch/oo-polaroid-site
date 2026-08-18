@@ -22,7 +22,11 @@
   --chrome-tint: #EDEEEE;  /* light wash of chrome, for card backgrounds */
   --honey: #B88752;        /* honey oak — sàn hiện có */
   --honey-tint: #F0E3CC;   /* light wash of honey, for card backgrounds */
-  --pop-yellow: #F0C64B;   /* one bright accent, used sparingly on stickers only */
+  --pop-yellow: #F0C64B;   /* rainbow accent — yellow, echoes the Polaroid stripe */
+  --rb-red: #E5473C;       /* rainbow accent — red */
+  --rb-orange: #F0914B;    /* rainbow accent — orange */
+  --rb-green: #6FA968;     /* rainbow accent — green */
+  --rb-blue: #4A90D9;      /* rainbow accent — blue */
   --ink: #2A2420;
   --serif: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -74,6 +78,7 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   flex: none;
 }
+.marquee__dot { color: var(--accent, var(--pop-yellow)); font-size: 0.9rem; }
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -82,7 +87,30 @@ img { max-width: 100%; display: block; }
   .marquee__track { animation: none; }
 }
 
-/* ---------- stickers (pop accents) ---------- */
+/* ---------- rainbow stripe (Polaroid-heritage accent motif) ---------- */
+
+.rainbow-stripe {
+  display: inline-flex;
+  flex: none;
+  width: 34px;
+  height: 7px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.rainbow-stripe span { flex: 1; }
+.rainbow-stripe span:nth-child(1) { background: var(--rb-red); }
+.rainbow-stripe span:nth-child(2) { background: var(--rb-orange); }
+.rainbow-stripe span:nth-child(3) { background: var(--pop-yellow); }
+.rainbow-stripe span:nth-child(4) { background: var(--rb-green); }
+.rainbow-stripe span:nth-child(5) { background: var(--rb-blue); }
+.rainbow-stripe--lg { width: 84px; height: 10px; margin-bottom: 1.1rem; }
+.rainbow-stripe--sticker { width: 44px; height: 13px; margin-bottom: 5px; }
+
+@media (max-width: 480px) {
+  .nav__brand .rainbow-stripe { display: none; }
+}
+
+/* ---------- stickers + confetti (pop accents) ---------- */
 
 .sticker {
   position: absolute;
@@ -95,29 +123,57 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 8px 16px rgba(42, 36, 32, 0.2);
   z-index: 5;
 }
-.sticker--pop {
-  top: -14px;
-  right: 6px;
-  width: 76px;
-  height: 76px;
-  background: var(--pop-yellow);
-  color: var(--ink);
-  font-size: 0.72rem;
-  line-height: 1.15;
+.sticker--rainbow {
+  top: -16px;
+  right: 4px;
+  width: 78px;
+  height: 78px;
+  background: #fff;
   flex-direction: column;
-  transform: rotate(9deg);
+  gap: 2px;
+  padding: 10px;
+  transform: rotate(11deg);
   border: 3px solid var(--cream);
+}
+.sticker--rainbow .sticker__mark {
+  font-family: var(--serif);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--ink);
 }
 .sticker--face {
   bottom: 20px;
   left: -18px;
   width: 44px;
   height: 44px;
-  background: var(--burgundy);
+  background: var(--rb-blue);
   color: var(--cream);
   font-size: 1.3rem;
   transform: rotate(-8deg);
 }
+.sticker--spark {
+  top: 46%;
+  left: -20px;
+  width: 34px;
+  height: 34px;
+  background: var(--rb-orange);
+  color: var(--cream);
+  font-size: 1rem;
+  transform: rotate(16deg);
+}
+
+.confetti { position: absolute; pointer-events: none; z-index: 0; }
+.confetti--dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.confetti--plus { width: 15px; height: 15px; }
+.confetti--plus::before,
+.confetti--plus::after {
+  content: "";
+  position: absolute;
+  background: var(--c);
+}
+.confetti--plus::before { width: 100%; height: 3px; top: 50%; left: 0; transform: translateY(-50%); }
+.confetti--plus::after { width: 3px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
 
 /* ---------- nav ---------- */
 
@@ -264,7 +320,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid transparent;
   transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:hover { transform: translateY(-2px) rotate(-1deg) scale(1.03); }
 .btn--dark { background: var(--burgundy); color: var(--cream); }
 .btn--dark:hover { background: var(--burgundy-dark); }
 .btn--ghost { background: transparent; border-color: rgba(42, 36, 32, 0.25); color: var(--ink); }
@@ -327,9 +383,9 @@ img { max-width: 100%; display: block; }
 .story__mark {
   font-family: var(--serif);
   font-size: 0.85rem;
-  color: var(--ink);
-  opacity: 0.4;
-  border: 1px solid rgba(42, 36, 32, 0.25);
+  font-weight: 700;
+  color: var(--cream);
+  background: var(--accent, var(--ink));
   border-radius: 999px;
   width: 2.1rem;
   height: 2.1rem;
@@ -337,7 +393,9 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   margin-bottom: 1.2rem;
+  box-shadow: 0 6px 14px rgba(42, 36, 32, 0.18);
 }
+.story__mark--light { color: var(--ink); }
 
 .section-head {
   max-width: 640px;
@@ -438,7 +496,7 @@ img { max-width: 100%; display: block; }
 .camera-card:nth-child(3) { transform: rotate(-2deg); }
 .camera-card:nth-child(4) { transform: rotate(4deg); }
 .camera-card:nth-child(5) { transform: rotate(-3deg); }
-.camera-card:hover { transform: rotate(0deg) translateY(-4px) !important; }
+.camera-card:hover { transform: rotate(0deg) translateY(-4px) scale(1.04) !important; }
 
 .camera-card__open {
   position: relative;
@@ -472,12 +530,17 @@ img { max-width: 100%; display: block; }
 }
 
 .camera-card__band {
+  display: inline-block;
   font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--burgundy);
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  background: var(--accent, var(--burgundy));
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
   margin: 8px 0 8px;
 }
+.camera-card__band--light { color: var(--ink); }
 
 .camera-card__photo {
   display: flex;
@@ -596,13 +659,14 @@ img { max-width: 100%; display: block; }
   display: inline-block;
   margin: 0 0 1.1rem;
   padding: 0.3rem 0.8rem;
-  background: var(--ink);
+  background: var(--accent, var(--ink));
   color: var(--cream);
   border-radius: 999px;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
+.camera-modal__pagelabel--light { color: var(--ink); }
 
 .camera-modal__photogrid {
   display: grid;
@@ -641,12 +705,17 @@ img { max-width: 100%; display: block; }
 .camera-modal__icon--olive { background: var(--olive-tint); }
 
 .camera-modal__eyebrow {
-  margin: 0 0 0.1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: rgba(42, 36, 32, 0.45);
+  display: inline-block;
+  margin: 0 0 0.35rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--cream);
+  background: var(--accent, var(--ink));
+  border-radius: 999px;
 }
+.camera-modal__eyebrow--light { color: var(--ink); }
 .camera-modal__heading h3 { font-size: 1.25rem; margin: 0; }
 .camera-modal__desc {
   margin: 0 0 1.1rem;
@@ -752,7 +821,7 @@ img { max-width: 100%; display: block; }
   top: 10px;
   left: 10px;
   z-index: 2;
-  background: rgba(42, 36, 32, 0.78);
+  background: var(--accent, rgba(42, 36, 32, 0.78));
   color: var(--cream);
   font-size: 0.68rem;
   font-weight: 600;
@@ -760,11 +829,13 @@ img { max-width: 100%; display: block; }
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
 }
+.gallery__tag--light { color: var(--ink); }
 
 .gallery__tape {
   top: -10px;
   left: -8px;
   transform: rotate(-40deg);
+  background: var(--accent, rgba(216, 200, 178, 0.88));
 }
 
 @media (max-width: 640px) {
