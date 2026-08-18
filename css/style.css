@@ -22,6 +22,7 @@
   --chrome-tint: #EDEEEE;  /* light wash of chrome, for card backgrounds */
   --honey: #B88752;        /* honey oak — sàn hiện có */
   --honey-tint: #F0E3CC;   /* light wash of honey, for card backgrounds */
+  --pop-yellow: #F0C64B;   /* one bright accent, used sparingly on stickers only */
   --ink: #2A2420;
   --serif: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -42,14 +43,81 @@ body {
 
 h1, h2, h3 {
   font-family: var(--serif);
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   letter-spacing: -0.01em;
 }
+h1 { font-weight: 800; }
 
 a { color: inherit; }
 
 img { max-width: 100%; display: block; }
+
+/* ---------- marquee ---------- */
+
+.marquee {
+  background: var(--ink);
+  color: var(--cream);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.55rem 0;
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 1.6rem;
+  animation: marquee-scroll 26s linear infinite;
+}
+.marquee__track span {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex: none;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+}
+
+/* ---------- stickers (pop accents) ---------- */
+
+.sticker {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(42, 36, 32, 0.2);
+  z-index: 5;
+}
+.sticker--pop {
+  top: -14px;
+  right: 6px;
+  width: 76px;
+  height: 76px;
+  background: var(--pop-yellow);
+  color: var(--ink);
+  font-size: 0.72rem;
+  line-height: 1.15;
+  flex-direction: column;
+  transform: rotate(9deg);
+  border: 3px solid var(--cream);
+}
+.sticker--face {
+  bottom: 20px;
+  left: -18px;
+  width: 44px;
+  height: 44px;
+  background: var(--burgundy);
+  color: var(--cream);
+  font-size: 1.3rem;
+  transform: rotate(-8deg);
+}
 
 /* ---------- nav ---------- */
 
