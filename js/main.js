@@ -14,46 +14,72 @@ navLinks.querySelectorAll("a").forEach((link) =>
   })
 );
 
-// camera book — swipeable/scrollable spread carousel
+// camera book — real page-flip transition between camera spreads
 const bookPages = document.getElementById("bookPages");
 if (bookPages) {
-  const spreads = Array.from(bookPages.children);
+  const leaves = Array.from(bookPages.children);
+  const spreads = leaves.map((leaf) => leaf.querySelector(".book__spread"));
   const dots = document.querySelectorAll(".book__dot");
   const prevBtn = document.querySelector(".book__arrow--prev");
   const nextBtn = document.querySelector(".book__arrow--next");
+  const FLIP_MS = 850;
 
-  function currentIndex() {
-    let closest = 0;
-    let smallestDiff = Infinity;
-    spreads.forEach((spread, i) => {
-      const diff = Math.abs(spread.offsetLeft - bookPages.scrollLeft);
-      if (diff < smallestDiff) {
-        smallestDiff = diff;
-        closest = i;
-      }
+  let current = 0;
+  let animating = false;
+
+  function syncHeight() {
+    // leaves are absolutely positioned, so scrollHeight (not offsetHeight)
+    // is what reports the spread's true content height regardless of the
+    // 0-height circular constraint that position:absolute + inset:0 creates
+    bookPages.style.height = spreads[current].scrollHeight + "px";
+  }
+
+  function render(flippingIndex) {
+    leaves.forEach((leaf, i) => {
+      const turned = i < current;
+      leaf.style.transform = turned ? "rotateY(-180deg)" : "rotateY(0deg)";
+      leaf.style.zIndex = turned ? i : leaves.length - i + 10;
     });
-    return closest;
+    if (flippingIndex !== undefined) leaves[flippingIndex].style.zIndex = 999;
+    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === current));
   }
 
   function goTo(index) {
-    const clamped = Math.max(0, Math.min(spreads.length - 1, index));
-    bookPages.scrollTo({ left: spreads[clamped].offsetLeft, behavior: "smooth" });
-  }
-
-  function updateDots() {
-    const idx = currentIndex();
-    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === idx));
+    const clamped = Math.max(0, Math.min(leaves.length - 1, index));
+    if (clamped === current || animating) return;
+    const flippingIndex = clamped > current ? current : clamped;
+    animating = true;
+    current = clamped;
+    syncHeight();
+    render(flippingIndex);
+    window.setTimeout(() => {
+      animating = false;
+      render();
+    }, FLIP_MS);
   }
 
   dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
-  if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex() - 1));
-  if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex() + 1));
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(current + 1));
 
-  let scrollTimer;
-  bookPages.addEventListener("scroll", () => {
-    window.clearTimeout(scrollTimer);
-    scrollTimer = window.setTimeout(updateDots, 100);
+  let touchStartX = null;
+  bookPages.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.touches[0].clientX;
+    },
+    { passive: true }
+  );
+  bookPages.addEventListener("touchend", (e) => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    touchStartX = null;
   });
+
+  window.addEventListener("resize", syncHeight);
+  syncHeight();
+  render();
 }
 
 // site-wide language toggle (EN / VI)
