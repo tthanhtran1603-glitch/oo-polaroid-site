@@ -24,17 +24,27 @@ if (bookPages) {
   const nextBtn = document.querySelector(".book__arrow--next");
   const FLIP_MS = 850;
 
+  const isMobile = () => window.matchMedia("(max-width: 640px)").matches;
+
   let current = 0;
+  let subpage = 0; // 0 = photos, 1 = info — only meaningful on mobile, where the two are separate flippable pages
   let animating = false;
 
-  function syncHeight() {
-    // leaves are absolutely positioned, so scrollHeight (not offsetHeight)
-    // is what reports the spread's true content height regardless of the
-    // 0-height circular constraint that position:absolute + inset:0 creates
-    bookPages.style.height = spreads[current].scrollHeight + "px";
+  function activePageEl() {
+    if (isMobile()) {
+      return spreads[current].querySelector(subpage === 0 ? ".book__page--photos" : ".book__page--info");
+    }
+    return spreads[current];
   }
 
-  function render(flippingIndex) {
+  function syncHeight() {
+    // absolutely positioned elements don't report their natural content
+    // height via offsetHeight, so we measure scrollHeight on the page
+    // that's actually showing right now
+    bookPages.style.height = activePageEl().scrollHeight + "px";
+  }
+
+  function renderOuter(flippingIndex) {
     leaves.forEach((leaf, i) => {
       const turned = i < current;
       leaf.style.transform = turned ? "rotateY(-180deg)" : "rotateY(0deg)";
@@ -44,23 +54,55 @@ if (bookPages) {
     dots.forEach((dot, i) => dot.classList.toggle("is-active", i === current));
   }
 
-  function goTo(index) {
+  function renderInner() {
+    spreads[current].classList.toggle("is-showing-info", subpage === 1);
+  }
+
+  function goToCamera(index, startSubpage) {
     const clamped = Math.max(0, Math.min(leaves.length - 1, index));
-    if (clamped === current || animating) return;
+    if (clamped === current) {
+      subpage = startSubpage;
+      renderInner();
+      syncHeight();
+      return;
+    }
+    if (animating) return;
     const flippingIndex = clamped > current ? current : clamped;
     animating = true;
     current = clamped;
+    subpage = startSubpage;
+    renderInner();
     syncHeight();
-    render(flippingIndex);
+    renderOuter(flippingIndex);
     window.setTimeout(() => {
       animating = false;
-      render();
+      renderOuter();
     }, FLIP_MS);
   }
 
-  dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
-  if (prevBtn) prevBtn.addEventListener("click", () => goTo(current - 1));
-  if (nextBtn) nextBtn.addEventListener("click", () => goTo(current + 1));
+  function stepForward() {
+    if (isMobile() && subpage === 0) {
+      subpage = 1;
+      renderInner();
+      syncHeight();
+    } else {
+      goToCamera(current + 1, 0);
+    }
+  }
+
+  function stepBackward() {
+    if (isMobile() && subpage === 1) {
+      subpage = 0;
+      renderInner();
+      syncHeight();
+    } else {
+      goToCamera(current - 1, isMobile() ? 1 : 0);
+    }
+  }
+
+  dots.forEach((dot, i) => dot.addEventListener("click", () => goToCamera(i, 0)));
+  if (prevBtn) prevBtn.addEventListener("click", stepBackward);
+  if (nextBtn) nextBtn.addEventListener("click", stepForward);
 
   let touchStartX = null;
   bookPages.addEventListener(
@@ -73,13 +115,14 @@ if (bookPages) {
   bookPages.addEventListener("touchend", (e) => {
     if (touchStartX === null) return;
     const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    if (Math.abs(dx) > 40) (dx < 0 ? stepForward() : stepBackward());
     touchStartX = null;
   });
 
   window.addEventListener("resize", syncHeight);
   syncHeight();
-  render();
+  renderOuter();
+  renderInner();
 }
 
 // site-wide language toggle (EN / VI)

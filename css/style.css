@@ -579,10 +579,31 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 640px) {
   .book { padding: 0 0.25rem; }
-  .book__spread { grid-template-columns: 1fr; }
   .book__page { padding: 1.6rem; }
   .book__page--photos { box-shadow: inset 0 -12px 18px -14px rgba(42, 36, 32, 0.25); }
   .book__hero-icon { width: 104px; height: 88px; margin-bottom: 0.8rem; }
+
+  /* on phones, photos and info become two separate pages you flip
+     between one at a time, instead of one long stacked sheet */
+  .book__spread {
+    display: block;
+    position: relative;
+    height: 100%;
+    perspective: 1600px;
+  }
+  .book__page {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-origin: 0% 50%;
+    transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
+    overflow-y: auto;
+  }
+  .book__page--photos { transform: rotateY(0deg); z-index: 2; }
+  .book__page--info { transform: rotateY(180deg); z-index: 1; }
+  .book__spread.is-showing-info .book__page--photos { transform: rotateY(-180deg); z-index: 1; }
+  .book__spread.is-showing-info .book__page--info { transform: rotateY(0deg); z-index: 2; }
 }
 
 .book__controls {
@@ -834,6 +855,24 @@ img { max-width: 100%; display: block; }
 .space__card h3 { margin: 0.5rem 0 0.7rem; font-size: 1.25rem; }
 .space__card p { margin: 0; color: rgba(42, 36, 32, 0.7); }
 .space__card:nth-child(2) p { color: rgba(244, 239, 230, 0.82); }
+
+.space__card .space__note {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  opacity: 0.75;
+}
+.space__tags { display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap; }
+.space__tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  border: 1px solid rgba(42, 36, 32, 0.25);
+  color: var(--ink);
+}
 
 @media (max-width: 640px) {
   .space__grid { grid-template-columns: 1fr; }
