@@ -478,21 +478,47 @@ img { max-width: 100%; display: block; }
   position: relative;
   max-width: 860px;
   margin: 0 auto;
-  padding: 0 2.75rem;
+  padding: 0 3.25rem;
+}
+
+/* fanned stack of covers peeking out on both sides, like books on a shelf */
+.book__stack {
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  width: 46px;
+  pointer-events: none;
+  z-index: 0;
+}
+.book__stack--left { left: 2px; }
+.book__stack--right { right: 2px; }
+.book__stack span {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
+  background: var(--c);
+}
+.book__stack--left span:nth-child(1) { transform: translateX(30px) rotate(-2deg) scaleY(0.97); opacity: 0.95; z-index: 3; }
+.book__stack--left span:nth-child(2) { transform: translateX(14px) rotate(-4deg) scaleY(0.93); opacity: 0.78; z-index: 2; }
+.book__stack--left span:nth-child(3) { transform: translateX(-2px) rotate(-6deg) scaleY(0.88); opacity: 0.55; z-index: 1; }
+.book__stack--right span:nth-child(1) { transform: translateX(-30px) rotate(2deg) scaleY(0.97); opacity: 0.95; z-index: 3; }
+.book__stack--right span:nth-child(2) { transform: translateX(-14px) rotate(4deg) scaleY(0.93); opacity: 0.78; z-index: 2; }
+.book__stack--right span:nth-child(3) { transform: translateX(-2px) rotate(6deg) scaleY(0.88); opacity: 0.55; z-index: 1; }
+
+@media (max-width: 640px) {
+  .book__stack { display: none; }
 }
 
 .book__pages {
+  position: relative;
+  z-index: 1;
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   border-radius: 18px;
-  box-shadow:
-    9px 11px 0 -3px rgba(244, 239, 230, 0.92),
-    9px 11px 0 -2px rgba(0, 0, 0, 0.2),
-    18px 22px 0 -6px rgba(244, 239, 230, 0.78),
-    18px 22px 0 -5px rgba(0, 0, 0, 0.16),
-    0 30px 50px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.35);
 }
 .book__pages::-webkit-scrollbar { display: none; }
 
@@ -516,11 +542,29 @@ img { max-width: 100%; display: block; }
 }
 .book__page--info { background: var(--cream); }
 
+.book__hero-icon {
+  width: 132px;
+  height: 112px;
+  margin: 0 auto 1.2rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.book__hero-icon svg { width: 100%; height: auto; }
+.book__hero-icon--chrome { background: var(--chrome-tint); }
+.book__hero-icon--honey { background: var(--honey-tint); }
+.book__hero-icon--beige { background: var(--beige-tint); }
+.book__hero-icon--burgundy { background: var(--burgundy-tint); }
+.book__hero-icon--olive { background: var(--olive-tint); }
+
 @media (max-width: 640px) {
   .book { padding: 0 0.25rem; }
   .book__spread { grid-template-columns: 1fr; }
   .book__page { padding: 1.6rem; }
   .book__page--photos { box-shadow: inset 0 -12px 18px -14px rgba(42, 36, 32, 0.25); }
+  .book__hero-icon { width: 104px; height: 88px; margin-bottom: 0.8rem; }
 }
 
 .book__controls {
@@ -616,20 +660,6 @@ img { max-width: 100%; display: block; }
   gap: 0.9rem;
   margin-bottom: 1rem;
 }
-
-.camera-modal__icon {
-  flex: none;
-  width: 56px;
-  height: auto;
-  aspect-ratio: 120 / 100;
-  border-radius: 8px;
-  padding: 6px;
-}
-.camera-modal__icon--chrome { background: var(--chrome-tint); }
-.camera-modal__icon--honey { background: var(--honey-tint); }
-.camera-modal__icon--beige { background: var(--beige-tint); }
-.camera-modal__icon--burgundy { background: var(--burgundy-tint); }
-.camera-modal__icon--olive { background: var(--olive-tint); }
 
 .camera-modal__eyebrow {
   display: inline-block;
