@@ -513,12 +513,11 @@ img { max-width: 100%; display: block; }
 .book__pages {
   position: relative;
   z-index: 1;
-  min-height: 420px;
+  height: 620px;
   perspective: 2400px;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.35);
-  transition: height 0.5s ease;
   touch-action: pan-y;
 }
 
@@ -548,9 +547,10 @@ img { max-width: 100%; display: block; }
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
+  height: 100%;
 }
 
-.book__page { padding: 2rem 1.7rem; }
+.book__page { padding: 2rem 1.7rem; height: 100%; overflow-y: auto; }
 .book__page--photos {
   background:
     linear-gradient(rgba(42, 36, 32, 0.06) 1px, transparent 1px) 0 0 / 100% 24px,
@@ -579,6 +579,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 640px) {
   .book { padding: 0 0.25rem; }
+  .book__pages { height: 480px; }
   .book__page { padding: 1.6rem; }
   .book__page--photos { box-shadow: inset 0 -12px 18px -14px rgba(42, 36, 32, 0.25); }
   .book__hero-icon { width: 104px; height: 88px; margin-bottom: 0.8rem; }

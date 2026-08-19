@@ -30,20 +30,6 @@ if (bookPages) {
   let subpage = 0; // 0 = photos, 1 = info — only meaningful on mobile, where the two are separate flippable pages
   let animating = false;
 
-  function activePageEl() {
-    if (isMobile()) {
-      return spreads[current].querySelector(subpage === 0 ? ".book__page--photos" : ".book__page--info");
-    }
-    return spreads[current];
-  }
-
-  function syncHeight() {
-    // absolutely positioned elements don't report their natural content
-    // height via offsetHeight, so we measure scrollHeight on the page
-    // that's actually showing right now
-    bookPages.style.height = activePageEl().scrollHeight + "px";
-  }
-
   function renderOuter(flippingIndex) {
     leaves.forEach((leaf, i) => {
       const turned = i < current;
@@ -63,7 +49,6 @@ if (bookPages) {
     if (clamped === current) {
       subpage = startSubpage;
       renderInner();
-      syncHeight();
       return;
     }
     if (animating) return;
@@ -72,7 +57,6 @@ if (bookPages) {
     current = clamped;
     subpage = startSubpage;
     renderInner();
-    syncHeight();
     renderOuter(flippingIndex);
     window.setTimeout(() => {
       animating = false;
@@ -84,7 +68,6 @@ if (bookPages) {
     if (isMobile() && subpage === 0) {
       subpage = 1;
       renderInner();
-      syncHeight();
     } else {
       goToCamera(current + 1, 0);
     }
@@ -94,7 +77,6 @@ if (bookPages) {
     if (isMobile() && subpage === 1) {
       subpage = 0;
       renderInner();
-      syncHeight();
     } else {
       goToCamera(current - 1, isMobile() ? 1 : 0);
     }
@@ -119,8 +101,6 @@ if (bookPages) {
     touchStartX = null;
   });
 
-  window.addEventListener("resize", syncHeight);
-  syncHeight();
   renderOuter();
   renderInner();
 }
