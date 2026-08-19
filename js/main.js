@@ -14,21 +14,47 @@ navLinks.querySelectorAll("a").forEach((link) =>
   })
 );
 
-// camera detail modals
-document.querySelectorAll(".deck-card").forEach((btn) =>
-  btn.addEventListener("click", () => {
-    const modal = document.getElementById(btn.dataset.modal);
-    if (modal) modal.showModal();
-  })
-);
+// camera book — swipeable/scrollable spread carousel
+const bookPages = document.getElementById("bookPages");
+if (bookPages) {
+  const spreads = Array.from(bookPages.children);
+  const dots = document.querySelectorAll(".book__dot");
+  const prevBtn = document.querySelector(".book__arrow--prev");
+  const nextBtn = document.querySelector(".book__arrow--next");
 
-document.querySelectorAll(".camera-modal").forEach((modal) => {
-  modal.querySelector(".camera-modal__close").addEventListener("click", () => modal.close());
-  // click on the backdrop (outside the modal box) closes it
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.close();
+  function currentIndex() {
+    let closest = 0;
+    let smallestDiff = Infinity;
+    spreads.forEach((spread, i) => {
+      const diff = Math.abs(spread.offsetLeft - bookPages.scrollLeft);
+      if (diff < smallestDiff) {
+        smallestDiff = diff;
+        closest = i;
+      }
+    });
+    return closest;
+  }
+
+  function goTo(index) {
+    const clamped = Math.max(0, Math.min(spreads.length - 1, index));
+    bookPages.scrollTo({ left: spreads[clamped].offsetLeft, behavior: "smooth" });
+  }
+
+  function updateDots() {
+    const idx = currentIndex();
+    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === idx));
+  }
+
+  dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(currentIndex() - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(currentIndex() + 1));
+
+  let scrollTimer;
+  bookPages.addEventListener("scroll", () => {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(updateDots, 100);
   });
-});
+}
 
 // site-wide language toggle (EN / VI)
 const langButtons = document.querySelectorAll(".lang-toggle__btn");
