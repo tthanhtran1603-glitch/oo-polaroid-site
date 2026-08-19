@@ -185,7 +185,13 @@ img { max-width: 100%; display: block; }
   font-size: 1.05rem;
   color: var(--cream);
 }
-.nav__brand img { height: 26px; width: auto; filter: invert(1); }
+.nav__brand img {
+  height: 26px;
+  width: auto;
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 4px 6px;
+}
 .nav__brand .brand-dot {
   width: 9px;
   height: 9px;
@@ -968,5 +974,10 @@ img { max-width: 100%; display: block; }
   background: var(--noir);
   color: var(--cream);
 }
-.footer img { height: 22px; filter: invert(1); }
+.footer img {
+  height: 22px;
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 5px 7px;
+}
 .footer p { font-size: 0.8rem; color: rgba(244, 239, 230, 0.5); margin: 0; }
