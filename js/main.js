@@ -15,7 +15,7 @@ navLinks.querySelectorAll("a").forEach((link) =>
 );
 
 // camera detail modals
-document.querySelectorAll(".camera-card__open").forEach((btn) =>
+document.querySelectorAll(".deck-card").forEach((btn) =>
   btn.addEventListener("click", () => {
     const modal = document.getElementById(btn.dataset.modal);
     if (modal) modal.showModal();

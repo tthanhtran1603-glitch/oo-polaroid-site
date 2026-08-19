@@ -35,7 +35,7 @@
   <a href="#top" class="nav__brand">
     <img src="assets/logo.png" alt="O-O Polaroid" />
     <span>O-O Polaroid</span>
-    <span class="rainbow-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+    <span class="brand-dot" aria-hidden="true"></span>
   </a>
   <div class="nav__right">
     <div class="nav__links" id="navLinks">
@@ -61,7 +61,6 @@
   <span class="confetti confetti--dot" style="--c: var(--rb-green); top: 85%; left: 46%;" aria-hidden="true"></span>
   <span class="confetti confetti--plus" style="--c: var(--pop-yellow); top: 8%; left: 58%;" aria-hidden="true"></span>
   <div class="hero__inner">
-    <span class="rainbow-stripe rainbow-stripe--lg" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
     <p class="eyebrow" data-vi="Studio ảnh lấy liền · TP. Hồ Chí Minh">Instant Film Studio · Ho Chi Minh City</p>
     <h1><span data-vi="Một tấm ảnh thật,">A real photograph,</span><br /><span data-vi="không thể chụp lại lần hai.">impossible to take twice.</span></h1>
     <p class="hero__lede" data-vi="Máy ảnh Polaroid analog chính hãng, phim hoá học thật, và một khoảnh khắc chờ ảnh hiện hình mà không nút bấm kỹ thuật số nào tái tạo được.">
@@ -80,10 +79,7 @@
       <span class="hero__tape"></span>
       <img src="assets/samples/sample-05.jpg" alt="" loading="eager" />
     </div>
-    <span class="sticker sticker--rainbow">
-      <span class="rainbow-stripe rainbow-stripe--sticker"><span></span><span></span><span></span><span></span><span></span></span>
-      <span class="sticker__mark">O-O SGN</span>
-    </span>
+    <span class="sticker sticker--burst"><span class="sticker__mark">O-O</span></span>
     <span class="sticker sticker--face">☺</span>
     <span class="sticker sticker--spark">✦</span>
   </div>
@@ -114,110 +110,89 @@
       <h2 data-vi="Máy &amp; Menu">Cameras &amp; Menu</h2>
       <p data-vi="Chọn một máy để xem ảnh mẫu và bảng giá của máy đó.">Pick a camera to see sample shots and its price list.</p>
     </div>
-    <p class="cameras__swipehint" data-vi="← vuốt để chọn →">← swipe to choose →</p>
-    <div class="cameras__grid">
+    <div class="cameras__deck">
 
-      <article class="camera-card camera-card--chrome">
-        <button class="camera-card__open" data-modal="modal-macro5">
-          <span class="camera-card__hole"></span>
-          <span class="camera-card__band" style="--accent: var(--rb-red)">CAM · 01</span>
-          <span class="camera-card__photo">
-            <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="15" y="20" width="28" height="65" rx="14" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="29" cy="33" r="6" fill="#7B2737"/>
-              <rect x="38" y="15" width="64" height="70" rx="10" stroke="#2A2420" stroke-width="3"/>
-              <rect x="46" y="46" width="12" height="26" rx="2" stroke="#2A2420" stroke-width="3"/>
-              <rect x="86" y="46" width="12" height="26" rx="2" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="70" cy="58" r="12" stroke="#2A2420" stroke-width="3"/>
-              <rect x="60" y="22" width="20" height="11" rx="2" stroke="#2A2420" stroke-width="3"/>
-            </svg>
-          </span>
-          <span class="camera-card__name">Macro 5 SLR</span>
-          <span class="camera-card__code">O-O · 01</span>
-        </button>
-      </article>
+      <button class="deck-card" style="--i:0; --spine: var(--rb-red)" data-modal="modal-macro5">
+        <span class="deck-card__icon">
+          <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="20" width="28" height="65" rx="14" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="29" cy="33" r="6" fill="#7B2737"/>
+            <rect x="38" y="15" width="64" height="70" rx="10" stroke="#2A2420" stroke-width="3"/>
+            <rect x="46" y="46" width="12" height="26" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <rect x="86" y="46" width="12" height="26" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="70" cy="58" r="12" stroke="#2A2420" stroke-width="3"/>
+            <rect x="60" y="22" width="20" height="11" rx="2" stroke="#2A2420" stroke-width="3"/>
+          </svg>
+        </span>
+        <span class="deck-card__name">Macro 5 SLR</span>
+        <span class="deck-card__code">O-O · 01</span>
+      </button>
 
-      <article class="camera-card camera-card--honey">
-        <button class="camera-card__open" data-modal="modal-sun660">
-          <span class="camera-card__hole"></span>
-          <span class="camera-card__band" style="--accent: var(--rb-orange)">CAM · 02</span>
-          <span class="camera-card__photo">
-            <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 78 L18 46 L52 22 L100 22 L100 78 Z" stroke="#2A2420" stroke-width="3" stroke-linejoin="round"/>
-              <circle cx="46" cy="50" r="15" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="46" cy="50" r="5" fill="#2A2420"/>
-              <rect x="82" y="28" width="15" height="10" rx="2" stroke="#2A2420" stroke-width="3"/>
-              <path d="M30 78 L24 88" stroke="#2A2420" stroke-width="3" stroke-linecap="round"/>
-              <path d="M90 78 L96 88" stroke="#2A2420" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <span class="camera-card__name">Polaroid Sun 660</span>
-          <span class="camera-card__code">O-O · 02</span>
-        </button>
-      </article>
+      <button class="deck-card" style="--i:1; --spine: var(--rb-orange)" data-modal="modal-sun660">
+        <span class="deck-card__icon">
+          <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 78 L18 46 L52 22 L100 22 L100 78 Z" stroke="#2A2420" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="46" cy="50" r="15" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="46" cy="50" r="5" fill="#2A2420"/>
+            <rect x="82" y="28" width="15" height="10" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <path d="M30 78 L24 88" stroke="#2A2420" stroke-width="3" stroke-linecap="round"/>
+            <path d="M90 78 L96 88" stroke="#2A2420" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="deck-card__name">Polaroid Sun 660</span>
+        <span class="deck-card__code">O-O · 02</span>
+      </button>
 
-      <article class="camera-card camera-card--beige">
-        <button class="camera-card__open" data-modal="modal-impulse">
-          <span class="camera-card__hole"></span>
-          <span class="camera-card__band camera-card__band--light" style="--accent: var(--pop-yellow)">CAM · 03</span>
-          <span class="camera-card__photo">
-            <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="15" y="48" width="90" height="34" rx="6" stroke="#2A2420" stroke-width="3"/>
-              <rect x="56" y="40" width="10" height="10" stroke="#2A2420" stroke-width="3"/>
-              <rect x="42" y="18" width="38" height="24" rx="3" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="53" cy="65" r="10" stroke="#2A2420" stroke-width="3"/>
-              <rect x="80" y="55" width="14" height="10" rx="2" stroke="#2A2420" stroke-width="3"/>
-              <line x1="15" y1="58" x2="105" y2="58" stroke="#7B2737" stroke-width="3"/>
-            </svg>
-          </span>
-          <span class="camera-card__name">Polaroid Impulse</span>
-          <span class="camera-card__code">O-O · 03</span>
-        </button>
-      </article>
+      <button class="deck-card deck-card--light" style="--i:2; --spine: var(--pop-yellow)" data-modal="modal-impulse">
+        <span class="deck-card__icon">
+          <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="48" width="90" height="34" rx="6" stroke="#2A2420" stroke-width="3"/>
+            <rect x="56" y="40" width="10" height="10" stroke="#2A2420" stroke-width="3"/>
+            <rect x="42" y="18" width="38" height="24" rx="3" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="53" cy="65" r="10" stroke="#2A2420" stroke-width="3"/>
+            <rect x="80" y="55" width="14" height="10" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <line x1="15" y1="58" x2="105" y2="58" stroke="#7B2737" stroke-width="3"/>
+          </svg>
+        </span>
+        <span class="deck-card__name">Polaroid Impulse</span>
+        <span class="deck-card__code">O-O · 03</span>
+      </button>
 
-      <article class="camera-card camera-card--burgundy">
-        <button class="camera-card__open" data-modal="modal-now3">
-          <span class="camera-card__hole"></span>
-          <span class="camera-card__band" style="--accent: var(--rb-green)">CAM · 04</span>
-          <span class="camera-card__photo">
-            <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="15" y="15" width="90" height="70" rx="14" stroke="#2A2420" stroke-width="3"/>
-              <rect x="50" y="19" width="7" height="5" fill="#7B2737"/>
-              <rect x="58" y="19" width="7" height="5" fill="#B88752"/>
-              <rect x="66" y="19" width="7" height="5" fill="#77765E"/>
-              <circle cx="30" cy="36" r="9" stroke="#2A2420" stroke-width="3"/>
-              <rect x="85" y="29" width="14" height="12" rx="2" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="60" cy="56" r="16" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="60" cy="56" r="6" fill="#2A2420"/>
-              <circle cx="28" cy="75" r="6" fill="#7B2737"/>
-            </svg>
-          </span>
-          <span class="camera-card__name">Polaroid Now 3+</span>
-          <span class="camera-card__code">O-O · 04</span>
-        </button>
-      </article>
+      <button class="deck-card" style="--i:3; --spine: var(--rb-green)" data-modal="modal-now3">
+        <span class="deck-card__icon">
+          <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="15" width="90" height="70" rx="14" stroke="#2A2420" stroke-width="3"/>
+            <rect x="50" y="19" width="7" height="5" fill="#7B2737"/>
+            <rect x="58" y="19" width="7" height="5" fill="#B88752"/>
+            <rect x="66" y="19" width="7" height="5" fill="#77765E"/>
+            <circle cx="30" cy="36" r="9" stroke="#2A2420" stroke-width="3"/>
+            <rect x="85" y="29" width="14" height="12" rx="2" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="60" cy="56" r="16" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="60" cy="56" r="6" fill="#2A2420"/>
+            <circle cx="28" cy="75" r="6" fill="#7B2737"/>
+          </svg>
+        </span>
+        <span class="deck-card__name">Polaroid Now 3+</span>
+        <span class="deck-card__code">O-O · 04</span>
+      </button>
 
-      <article class="camera-card camera-card--olive">
-        <button class="camera-card__open" data-modal="modal-studioexpress">
-          <span class="camera-card__hole"></span>
-          <span class="camera-card__band" style="--accent: var(--rb-blue)">CAM · 05</span>
-          <span class="camera-card__photo">
-            <svg class="camera-card__icon" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="36" width="65" height="49" rx="8" stroke="#2A2420" stroke-width="3"/>
-              <path d="M95 42 C 108 46, 108 62, 95 66" stroke="#2A2420" stroke-width="3" fill="none" stroke-linecap="round"/>
-              <line x1="60" y1="36" x2="60" y2="18" stroke="#2A2420" stroke-width="3"/>
-              <rect x="45" y="6" width="30" height="14" rx="3" stroke="#2A2420" stroke-width="3"/>
-              <rect x="9" y="27" width="21" height="16" rx="2" stroke="#2A2420" stroke-width="3" transform="rotate(-8 19 35)"/>
-              <circle cx="48" cy="53" r="6" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="67" cy="53" r="6" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="48" cy="70" r="6" stroke="#2A2420" stroke-width="3"/>
-              <circle cx="67" cy="70" r="6" stroke="#2A2420" stroke-width="3"/>
-            </svg>
-          </span>
-          <span class="camera-card__name">Polaroid Studio Express</span>
-          <span class="camera-card__code">O-O · 05</span>
-        </button>
-      </article>
+      <button class="deck-card" style="--i:4; --spine: var(--rb-blue)" data-modal="modal-studioexpress">
+        <span class="deck-card__icon">
+          <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="36" width="65" height="49" rx="8" stroke="#2A2420" stroke-width="3"/>
+            <path d="M95 42 C 108 46, 108 62, 95 66" stroke="#2A2420" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <line x1="60" y1="36" x2="60" y2="18" stroke="#2A2420" stroke-width="3"/>
+            <rect x="45" y="6" width="30" height="14" rx="3" stroke="#2A2420" stroke-width="3"/>
+            <rect x="9" y="27" width="21" height="16" rx="2" stroke="#2A2420" stroke-width="3" transform="rotate(-8 19 35)"/>
+            <circle cx="48" cy="53" r="6" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="67" cy="53" r="6" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="48" cy="70" r="6" stroke="#2A2420" stroke-width="3"/>
+            <circle cx="67" cy="70" r="6" stroke="#2A2420" stroke-width="3"/>
+          </svg>
+        </span>
+        <span class="deck-card__name">Polaroid Studio Express</span>
+        <span class="deck-card__code">O-O · 05</span>
+      </button>
 
     </div>
 

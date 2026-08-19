@@ -8,25 +8,27 @@
 }
 
 :root {
-  /* Warm Retro — O-O Polaroid interior palette */
-  --cream: #F4EFE6;        /* trắng kem — tường nền, 45% */
-  --beige: #D8C8B2;        /* be ấm — quầy / tủ, 20% */
-  --beige-tint: #EAE0D0;   /* light wash of beige, for card backgrounds */
-  --burgundy: #7B2737;     /* burgundy — buồng / rèm, 20% */
+  /* O-O Polaroid — darkroom editorial palette */
+  --cream: #F4EFE6;        /* paper — content sections */
+  --beige: #D8C8B2;
+  --beige-tint: #EAE0D0;
+  --burgundy: #7B2737;     /* kept as one deep signature band (Visit) */
   --burgundy-dark: #611F2C;
-  --burgundy-tint: #EFDCDF; /* light wash of burgundy, for card backgrounds */
-  --olive: #77765E;        /* olive xám — trang trí, 10% */
-  --olive-tint: #E7E5D8;   /* light wash of olive, for card backgrounds */
-  --chrome: #C4C6C7;       /* bạc chrome — gương / kệ, 5% */
+  --burgundy-tint: #EFDCDF;
+  --olive: #77765E;
+  --olive-tint: #E7E5D8;
+  --chrome: #C4C6C7;
   --chrome-dark: #A9ABAC;
-  --chrome-tint: #EDEEEE;  /* light wash of chrome, for card backgrounds */
-  --honey: #B88752;        /* honey oak — sàn hiện có */
-  --honey-tint: #F0E3CC;   /* light wash of honey, for card backgrounds */
-  --pop-yellow: #F0C64B;   /* rainbow accent — yellow, echoes the Polaroid stripe */
-  --rb-red: #E5473C;       /* rainbow accent — red */
-  --rb-orange: #F0914B;    /* rainbow accent — orange */
-  --rb-green: #6FA968;     /* rainbow accent — green */
-  --rb-blue: #4A90D9;      /* rainbow accent — blue */
+  --chrome-tint: #EDEEEE;
+  --honey: #B88752;
+  --honey-tint: #F0E3CC;
+  --noir: #17110D;         /* near-black — nav / marquee / footer surfaces */
+  --pop-yellow: #D9A23B;   /* accent — antique gold */
+  --rb-red: #E64A34;       /* accent — flash coral-red (also the primary CTA color) */
+  --rb-red-dark: #C23A26;
+  --rb-orange: #B5652E;    /* accent — burnt clay */
+  --rb-green: #4B6A4E;     /* accent — deep moss */
+  --rb-blue: #35486B;      /* accent — deep indigo */
   --ink: #2A2420;
   --serif: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -60,7 +62,7 @@ img { max-width: 100%; display: block; }
 /* ---------- marquee ---------- */
 
 .marquee {
-  background: var(--ink);
+  background: var(--noir);
   color: var(--cream);
   overflow: hidden;
   white-space: nowrap;
@@ -87,29 +89,6 @@ img { max-width: 100%; display: block; }
   .marquee__track { animation: none; }
 }
 
-/* ---------- rainbow stripe (Polaroid-heritage accent motif) ---------- */
-
-.rainbow-stripe {
-  display: inline-flex;
-  flex: none;
-  width: 34px;
-  height: 7px;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.rainbow-stripe span { flex: 1; }
-.rainbow-stripe span:nth-child(1) { background: var(--rb-red); }
-.rainbow-stripe span:nth-child(2) { background: var(--rb-orange); }
-.rainbow-stripe span:nth-child(3) { background: var(--pop-yellow); }
-.rainbow-stripe span:nth-child(4) { background: var(--rb-green); }
-.rainbow-stripe span:nth-child(5) { background: var(--rb-blue); }
-.rainbow-stripe--lg { width: 84px; height: 10px; margin-bottom: 1.1rem; }
-.rainbow-stripe--sticker { width: 44px; height: 13px; margin-bottom: 5px; }
-
-@media (max-width: 480px) {
-  .nav__brand .rainbow-stripe { display: none; }
-}
-
 /* ---------- stickers + confetti (pop accents) ---------- */
 
 .sticker {
@@ -117,50 +96,53 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
   font-weight: 800;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(42, 36, 32, 0.2);
   z-index: 5;
 }
-.sticker--rainbow {
-  top: -16px;
-  right: 4px;
-  width: 78px;
-  height: 78px;
-  background: #fff;
-  flex-direction: column;
-  gap: 2px;
-  padding: 10px;
-  transform: rotate(11deg);
-  border: 3px solid var(--cream);
+.sticker--burst {
+  top: -22px;
+  right: -6px;
+  width: 88px;
+  height: 88px;
+  background: var(--rb-red);
+  clip-path: polygon(50% 0%, 61% 15%, 78% 6%, 80% 25%, 98% 28%, 89% 45%, 100% 60%,
+    83% 65%, 86% 84%, 68% 78%, 60% 96%, 50% 80%, 40% 96%, 32% 78%, 14% 84%,
+    17% 65%, 0% 60%, 11% 45%, 2% 28%, 20% 25%, 22% 6%, 39% 15%);
+  transform: rotate(8deg);
+  box-shadow: 0 10px 20px rgba(24, 18, 14, 0.28);
 }
-.sticker--rainbow .sticker__mark {
+.sticker--burst .sticker__mark {
   font-family: var(--serif);
-  font-size: 0.62rem;
+  font-size: 0.92rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
-  color: var(--ink);
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  transform: rotate(-8deg);
 }
 .sticker--face {
   bottom: 20px;
   left: -18px;
   width: 44px;
   height: 44px;
+  border-radius: 999px;
   background: var(--rb-blue);
   color: var(--cream);
   font-size: 1.3rem;
   transform: rotate(-8deg);
+  box-shadow: 0 8px 16px rgba(24, 18, 14, 0.24);
 }
 .sticker--spark {
   top: 46%;
   left: -20px;
   width: 34px;
   height: 34px;
-  background: var(--rb-orange);
-  color: var(--cream);
+  border-radius: 999px;
+  background: var(--pop-yellow);
+  color: var(--ink);
   font-size: 1rem;
   transform: rotate(16deg);
+  box-shadow: 0 8px 16px rgba(24, 18, 14, 0.24);
 }
 
 .confetti { position: absolute; pointer-events: none; z-index: 0; }
@@ -186,9 +168,10 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(244, 239, 230, 0.85);
+  background: rgba(23, 17, 13, 0.92);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(42, 36, 32, 0.08);
+  border-bottom: 1px solid rgba(244, 239, 230, 0.1);
+  color: var(--cream);
 }
 
 .nav__brand {
@@ -199,8 +182,16 @@ img { max-width: 100%; display: block; }
   font-family: var(--serif);
   font-weight: 600;
   font-size: 1.05rem;
+  color: var(--cream);
 }
-.nav__brand img { height: 28px; width: auto; }
+.nav__brand img { height: 26px; width: auto; filter: invert(1); }
+.nav__brand .brand-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--rb-red);
+  flex: none;
+}
 
 .nav__right {
   display: flex;
@@ -215,7 +206,7 @@ img { max-width: 100%; display: block; }
 }
 .nav__links a {
   text-decoration: none;
-  color: var(--ink);
+  color: var(--cream);
   opacity: 0.72;
   transition: opacity 0.2s ease;
 }
@@ -233,7 +224,7 @@ img { max-width: 100%; display: block; }
 .nav__toggle span {
   width: 20px;
   height: 2px;
-  background: var(--ink);
+  background: var(--cream);
   border-radius: 2px;
 }
 
@@ -246,8 +237,8 @@ img { max-width: 100%; display: block; }
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: var(--cream);
-    border-bottom: 1px solid rgba(42, 36, 32, 0.08);
+    background: var(--noir);
+    border-bottom: 1px solid rgba(244, 239, 230, 0.1);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -255,7 +246,7 @@ img { max-width: 100%; display: block; }
   .nav__links.is-open { max-height: 260px; }
   .nav__links a {
     padding: 0.9rem 1.5rem;
-    border-top: 1px solid rgba(42, 36, 32, 0.06);
+    border-top: 1px solid rgba(244, 239, 230, 0.08);
   }
 }
 
@@ -289,8 +280,17 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--burgundy);
+  color: var(--rb-red);
   margin: 0 0 1rem;
+}
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--rb-red);
+  margin-bottom: 1rem;
 }
 
 .hero h1 {
@@ -321,8 +321,8 @@ img { max-width: 100%; display: block; }
   transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
 .btn:hover { transform: translateY(-2px) rotate(-1deg) scale(1.03); }
-.btn--dark { background: var(--burgundy); color: var(--cream); }
-.btn--dark:hover { background: var(--burgundy-dark); }
+.btn--dark { background: var(--rb-red); color: var(--cream); }
+.btn--dark:hover { background: var(--rb-red-dark); }
 .btn--ghost { background: transparent; border-color: rgba(42, 36, 32, 0.25); color: var(--ink); }
 .btn--ghost:hover { background: var(--beige-tint); }
 
@@ -468,119 +468,88 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
 }
 
-.cameras__swipehint {
-  display: none;
-  text-align: center;
-  font-size: 0.76rem;
-  color: rgba(42, 36, 32, 0.45);
-  margin: -0.6rem 0 1.4rem;
-}
+/* fanned book-cover deck — pick a camera the way you'd pick a book off a shelf */
 
-.cameras__grid {
-  display: flex;
-  gap: 1.1rem;
-  justify-content: center;
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
-  padding: 0.3rem 0.3rem 0.6rem;
-}
-
-.camera-card {
-  flex: 0 0 auto;
-  width: 138px;
-  scroll-snap-align: center;
-  transition: transform 0.25s ease;
-}
-.camera-card:nth-child(1) { transform: rotate(-4deg); }
-.camera-card:nth-child(2) { transform: rotate(3deg); }
-.camera-card:nth-child(3) { transform: rotate(-2deg); }
-.camera-card:nth-child(4) { transform: rotate(4deg); }
-.camera-card:nth-child(5) { transform: rotate(-3deg); }
-.camera-card:hover { transform: rotate(0deg) translateY(-4px) scale(1.04) !important; }
-
-.camera-card__open {
+.cameras__deck {
   position: relative;
+  height: 340px;
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+}
+
+.deck-card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 122px;
+  height: 284px;
+  border: none;
+  border-radius: 16px 16px 8px 8px;
+  cursor: pointer;
+  background: var(--spine, var(--noir));
+  color: var(--cream);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  background: #fff;
-  border: 1px solid rgba(42, 36, 32, 0.1);
-  border-radius: 12px;
-  padding: 18px 12px 12px;
-  margin: 0;
-  cursor: pointer;
-  text-align: center;
+  justify-content: flex-end;
+  padding: 1.3rem 0.7rem 1.1rem;
   font-family: var(--sans);
-  box-shadow: 0 10px 22px rgba(42, 36, 32, 0.14);
-  transition: box-shadow 0.2s ease;
+  transform-origin: bottom center;
+  transform: translateX(calc(-50% + (var(--i) - 2) * 60px)) rotate(calc((var(--i) - 2) * 9deg));
+  box-shadow: 0 16px 28px rgba(23, 17, 13, 0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: calc(var(--i) + 1);
 }
-.camera-card__open:hover { box-shadow: 0 16px 30px rgba(42, 36, 32, 0.2); }
-
-.camera-card__hole {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--cream);
-  border: 2px solid rgba(42, 36, 32, 0.16);
+.deck-card:hover,
+.deck-card:focus-visible {
+  transform: translateX(calc(-50% + (var(--i) - 2) * 60px)) translateY(-28px) rotate(0deg);
+  z-index: 10;
+  box-shadow: 0 26px 40px rgba(23, 17, 13, 0.34);
 }
+.deck-card--light { color: var(--ink); }
 
-.camera-card__band {
-  display: inline-block;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--cream);
-  background: var(--accent, var(--burgundy));
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  margin: 8px 0 8px;
-}
-.camera-card__band--light { color: var(--ink); }
-
-.camera-card__photo {
+.deck-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 6px;
-  border: 1px solid rgba(42, 36, 32, 0.1);
-  margin-bottom: 0.6rem;
-  padding: 10px;
+  padding: 8px;
+  margin-bottom: 0.8rem;
+  flex: none;
 }
-.camera-card__icon { width: 100%; height: auto; }
+.deck-card__icon svg { width: 100%; height: auto; }
 
-.camera-card--chrome .camera-card__photo { background: var(--chrome-tint); }
-.camera-card--honey .camera-card__photo { background: var(--honey-tint); }
-.camera-card--beige .camera-card__photo { background: var(--beige-tint); }
-.camera-card--burgundy .camera-card__photo { background: var(--burgundy-tint); }
-.camera-card--olive .camera-card__photo { background: var(--olive-tint); }
-
-.camera-card__name {
-  display: block;
-  margin: 0;
-  font-size: 0.76rem;
+.deck-card__name {
+  font-family: var(--serif);
   font-weight: 700;
-  line-height: 1.25;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  text-align: center;
 }
-
-.camera-card__code {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 0.62rem;
+.deck-card__code {
+  margin-top: 0.3rem;
+  font-size: 0.6rem;
   letter-spacing: 0.06em;
-  color: rgba(42, 36, 32, 0.4);
+  opacity: 0.75;
 }
 
 @media (max-width: 640px) {
-  .cameras__swipehint { display: block; }
-  .cameras__grid { justify-content: flex-start; }
-  .camera-card { width: 118px; }
+  .cameras { overflow-x: hidden; }
+  .cameras__deck { height: 280px; }
+  .deck-card {
+    width: 92px;
+    height: 226px;
+    transform: translateX(calc(-50% + (var(--i) - 2) * 38px)) rotate(calc((var(--i) - 2) * 7deg));
+  }
+  .deck-card:hover,
+  .deck-card:focus-visible {
+    transform: translateX(calc(-50% + (var(--i) - 2) * 38px)) translateY(-18px) rotate(0deg);
+  }
+  .deck-card__icon { width: 40px; height: 40px; margin-bottom: 0.5rem; }
+  .deck-card__name { font-size: 0.68rem; }
 }
 
 .camera-card__filmname {
@@ -877,8 +846,6 @@ img { max-width: 100%; display: block; }
 .visit__inner { max-width: 640px; margin: 0 auto; text-align: center; }
 .visit h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
 .visit p { color: rgba(244, 239, 230, 0.75); margin: 0.8rem 0 2rem; }
-.visit .btn--dark { background: var(--honey); color: var(--ink); }
-.visit .btn--dark:hover { background: var(--honey); opacity: 0.88; }
 
 .visit__details {
   margin: 3rem 0 0;
@@ -911,6 +878,8 @@ img { max-width: 100%; display: block; }
   gap: 0.8rem;
   padding: 3rem 1.5rem;
   text-align: center;
+  background: var(--noir);
+  color: var(--cream);
 }
-.footer img { height: 24px; }
-.footer p { font-size: 0.8rem; color: rgba(42, 36, 32, 0.5); margin: 0; }
+.footer img { height: 22px; filter: invert(1); }
+.footer p { font-size: 0.8rem; color: rgba(244, 239, 230, 0.5); margin: 0; }
