@@ -14,95 +14,49 @@ navLinks.querySelectorAll("a").forEach((link) =>
   })
 );
 
-// camera book — real page-flip transition between camera spreads
-const bookPages = document.getElementById("bookPages");
-if (bookPages) {
-  const leaves = Array.from(bookPages.children);
-  const spreads = leaves.map((leaf) => leaf.querySelector(".book__spread"));
-  const dots = document.querySelectorAll(".book__dot");
-  const prevBtn = document.querySelector(".book__arrow--prev");
-  const nextBtn = document.querySelector(".book__arrow--next");
-  const FLIP_MS = 850;
+// retro TV — power it on, then flip through cameras like changing channels
+const tv = document.querySelector(".tv");
+const tvScreen = document.getElementById("tvScreen");
+if (tv && tvScreen) {
+  const channels = Array.from(document.querySelectorAll(".tv__channel"));
+  const lights = Array.from(document.querySelectorAll(".tv__light"));
+  const powerBtn = document.getElementById("tvPowerBtn");
+  const channelBtn = document.getElementById("tvChannelBtn");
 
-  const isMobile = () => window.matchMedia("(max-width: 640px)").matches;
+  let isOn = false;
+  let channelIndex = 0;
 
-  let current = 0;
-  let subpage = 0; // 0 = photos, 1 = info — only meaningful on mobile, where the two are separate flippable pages
-  let animating = false;
+  function flicker() {
+    tvScreen.classList.remove("is-flickering");
+    void tvScreen.offsetWidth; // restart the CSS animation on repeat clicks
+    tvScreen.classList.add("is-flickering");
+  }
 
-  function renderOuter(flippingIndex) {
-    leaves.forEach((leaf, i) => {
-      const turned = i < current;
-      leaf.style.transform = turned ? "rotateY(-180deg)" : "rotateY(0deg)";
-      leaf.style.zIndex = turned ? i : leaves.length - i + 10;
+  function render() {
+    tv.classList.toggle("is-on", isOn);
+    if (powerBtn) powerBtn.classList.toggle("is-on", isOn);
+    channels.forEach((ch, i) => ch.classList.toggle("is-active", isOn && i === channelIndex));
+    lights.forEach((light, i) => light.classList.toggle("is-lit", isOn && i === channelIndex));
+  }
+
+  if (powerBtn) {
+    powerBtn.addEventListener("click", () => {
+      isOn = !isOn;
+      flicker();
+      render();
     });
-    if (flippingIndex !== undefined) leaves[flippingIndex].style.zIndex = 999;
-    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === current));
   }
 
-  function renderInner() {
-    spreads[current].classList.toggle("is-showing-info", subpage === 1);
+  if (channelBtn) {
+    channelBtn.addEventListener("click", () => {
+      if (!isOn) return;
+      channelIndex = (channelIndex + 1) % channels.length;
+      flicker();
+      render();
+    });
   }
 
-  function goToCamera(index, startSubpage) {
-    const clamped = Math.max(0, Math.min(leaves.length - 1, index));
-    if (clamped === current) {
-      subpage = startSubpage;
-      renderInner();
-      return;
-    }
-    if (animating) return;
-    const flippingIndex = clamped > current ? current : clamped;
-    animating = true;
-    current = clamped;
-    subpage = startSubpage;
-    renderInner();
-    renderOuter(flippingIndex);
-    window.setTimeout(() => {
-      animating = false;
-      renderOuter();
-    }, FLIP_MS);
-  }
-
-  function stepForward() {
-    if (isMobile() && subpage === 0) {
-      subpage = 1;
-      renderInner();
-    } else {
-      goToCamera(current + 1, 0);
-    }
-  }
-
-  function stepBackward() {
-    if (isMobile() && subpage === 1) {
-      subpage = 0;
-      renderInner();
-    } else {
-      goToCamera(current - 1, isMobile() ? 1 : 0);
-    }
-  }
-
-  dots.forEach((dot, i) => dot.addEventListener("click", () => goToCamera(i, 0)));
-  if (prevBtn) prevBtn.addEventListener("click", stepBackward);
-  if (nextBtn) nextBtn.addEventListener("click", stepForward);
-
-  let touchStartX = null;
-  bookPages.addEventListener(
-    "touchstart",
-    (e) => {
-      touchStartX = e.touches[0].clientX;
-    },
-    { passive: true }
-  );
-  bookPages.addEventListener("touchend", (e) => {
-    if (touchStartX === null) return;
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 40) (dx < 0 ? stepForward() : stepBackward());
-    touchStartX = null;
-  });
-
-  renderOuter();
-  renderInner();
+  render();
 }
 
 // site-wide language toggle (EN / VI)
