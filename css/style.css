@@ -9,7 +9,7 @@
 
 :root {
   /* O-O Polaroid — warm playful palette (refreshed from Rayo / nujiao refs) */
-  --cream: #F7EBDA;        /* warm ivory — paper / content sections */
+  --cream: #FFF8E6;        /* warm ivory — paper / content sections (Latte Silk) */
   --beige: #E0CBAE;
   --beige-tint: #EFE2CC;
   --burgundy: #7B2737;     /* kept as one deep signature band (Visit) */
@@ -24,7 +24,7 @@
   --honey-tint: #F0E3CC;
   --walnut: #4A2F1C;       /* dark wood — TV set case */
   --tv-bezel: #17110D;     /* near-black — TV screen bezel only, stays dark regardless of page theme */
-  --noir: #F7EBDA;         /* same warm ivory as --cream — nav / marquee / footer surfaces, one continuous canvas */
+  --noir: #FFF8E6;         /* same warm ivory as --cream — nav / marquee / footer surfaces, one continuous canvas */
   --pop-yellow: #EFBD48;   /* accent — mustard, for filled badges/dots */
   --pop-yellow-ink: #A9791E; /* darker gold, for when yellow is used as raw text on light backgrounds */
   --pop-pink: #EFB6B0;     /* accent — soft coral pink */
@@ -173,7 +173,7 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(247, 235, 218, 0.88);
+  background: rgba(255, 248, 230, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(42, 36, 32, 0.08);
   color: var(--ink);
