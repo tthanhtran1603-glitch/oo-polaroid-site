@@ -8,10 +8,10 @@
 }
 
 :root {
-  /* O-O Polaroid — darkroom editorial palette */
-  --cream: #F4EFE6;        /* paper — content sections */
-  --beige: #D8C8B2;
-  --beige-tint: #EAE0D0;
+  /* O-O Polaroid — warm playful palette (refreshed from Rayo / nujiao refs) */
+  --cream: #F7EBDA;        /* warm ivory — paper / content sections */
+  --beige: #E0CBAE;
+  --beige-tint: #EFE2CC;
   --burgundy: #7B2737;     /* kept as one deep signature band (Visit) */
   --burgundy-dark: #611F2C;
   --burgundy-tint: #EFDCDF;
@@ -23,13 +23,14 @@
   --honey: #B88752;
   --honey-tint: #F0E3CC;
   --walnut: #4A2F1C;       /* dark wood — TV set case */
-  --noir: #17110D;         /* near-black — nav / marquee / footer surfaces */
-  --pop-yellow: #D9A23B;   /* accent — antique gold */
-  --rb-red: #E64A34;       /* accent — flash coral-red (also the primary CTA color) */
-  --rb-red-dark: #C23A26;
-  --rb-orange: #B5652E;    /* accent — burnt clay */
-  --rb-green: #4B6A4E;     /* accent — deep moss */
-  --rb-blue: #35486B;      /* accent — deep indigo */
+  --noir: #3E5C77;         /* dusty slate blue — nav / marquee / footer surfaces */
+  --pop-yellow: #EFBD48;   /* accent — mustard */
+  --pop-pink: #EFB6B0;     /* accent — soft coral pink */
+  --rb-red: #C23B26;       /* accent — terracotta red (also the primary CTA color) */
+  --rb-red-dark: #9E2F1D;
+  --rb-orange: #C97A46;    /* accent — warm clay */
+  --rb-green: #6C8B5E;     /* accent — soft sage */
+  --rb-blue: #6E93B7;      /* accent — dusty sky blue */
   --ink: #2A2420;
   --serif: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -169,7 +170,7 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(23, 17, 13, 0.92);
+  background: rgba(62, 92, 119, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(244, 239, 230, 0.1);
   color: var(--cream);
@@ -700,7 +701,7 @@ img { max-width: 100%; display: block; }
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .tv__power:hover { transform: scale(1.06); }
-.tv__power.is-on { box-shadow: 0 0 0 3px rgba(230, 74, 52, 0.35), 0 4px 10px rgba(0, 0, 0, 0.25); }
+.tv__power.is-on { box-shadow: 0 0 0 3px rgba(194, 59, 38, 0.35), 0 4px 10px rgba(0, 0, 0, 0.25); }
 
 @media (max-width: 640px) {
   .tv__set { padding: 1rem; border-radius: 38px; }
