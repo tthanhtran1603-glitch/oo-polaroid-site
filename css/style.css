@@ -23,8 +23,10 @@
   --honey: #B88752;
   --honey-tint: #F0E3CC;
   --walnut: #4A2F1C;       /* dark wood — TV set case */
-  --noir: #3E5C77;         /* dusty slate blue — nav / marquee / footer surfaces */
-  --pop-yellow: #EFBD48;   /* accent — mustard */
+  --tv-bezel: #17110D;     /* near-black — TV screen bezel only, stays dark regardless of page theme */
+  --noir: #E0CBAE;         /* warm beige — nav / marquee / footer surfaces */
+  --pop-yellow: #EFBD48;   /* accent — mustard, for filled badges/dots */
+  --pop-yellow-ink: #A9791E; /* darker gold, for when yellow is used as raw text on light backgrounds */
   --pop-pink: #EFB6B0;     /* accent — soft coral pink */
   --rb-red: #C23B26;       /* accent — terracotta red (also the primary CTA color) */
   --rb-red-dark: #9E2F1D;
@@ -42,7 +44,9 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--cream);
+  background-color: var(--cream);
+  background-image: radial-gradient(circle, rgba(42, 36, 32, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
   color: var(--ink);
   font-family: var(--sans);
   line-height: 1.6;
@@ -65,7 +69,7 @@ img { max-width: 100%; display: block; }
 
 .marquee {
   background: var(--noir);
-  color: var(--cream);
+  color: var(--ink);
   overflow: hidden;
   white-space: nowrap;
   padding: 0.55rem 0;
@@ -170,10 +174,10 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(62, 92, 119, 0.92);
+  background: rgba(247, 235, 218, 0.88);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(244, 239, 230, 0.1);
-  color: var(--cream);
+  border-bottom: 1px solid rgba(42, 36, 32, 0.08);
+  color: var(--ink);
 }
 
 .nav__brand {
@@ -184,15 +188,9 @@ img { max-width: 100%; display: block; }
   font-family: var(--serif);
   font-weight: 600;
   font-size: 1.05rem;
-  color: var(--cream);
+  color: var(--ink);
 }
-.nav__brand img {
-  height: 26px;
-  width: auto;
-  background: var(--cream);
-  border-radius: 8px;
-  padding: 4px 6px;
-}
+.nav__brand img { height: 26px; width: auto; }
 .nav__brand .brand-dot {
   width: 9px;
   height: 9px;
@@ -214,7 +212,7 @@ img { max-width: 100%; display: block; }
 }
 .nav__links a {
   text-decoration: none;
-  color: var(--cream);
+  color: var(--ink);
   opacity: 0.72;
   transition: opacity 0.2s ease;
 }
@@ -232,7 +230,7 @@ img { max-width: 100%; display: block; }
 .nav__toggle span {
   width: 20px;
   height: 2px;
-  background: var(--cream);
+  background: var(--ink);
   border-radius: 2px;
 }
 
@@ -245,8 +243,8 @@ img { max-width: 100%; display: block; }
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: var(--noir);
-    border-bottom: 1px solid rgba(244, 239, 230, 0.1);
+    background: var(--cream);
+    border-bottom: 1px solid rgba(42, 36, 32, 0.08);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -254,7 +252,7 @@ img { max-width: 100%; display: block; }
   .nav__links.is-open { max-height: 260px; }
   .nav__links a {
     padding: 0.9rem 1.5rem;
-    border-top: 1px solid rgba(244, 239, 230, 0.08);
+    border-top: 1px solid rgba(42, 36, 32, 0.06);
   }
 }
 
@@ -512,11 +510,9 @@ img { max-width: 100%; display: block; }
 .cameras {
   padding: 5rem 1.5rem 6rem;
   background: var(--noir);
-  color: var(--cream);
+  color: var(--ink);
 }
 .cameras__inner { max-width: 1080px; margin: 0 auto; }
-.cameras .section-head h2 { color: var(--cream); }
-.cameras .section-head p { color: rgba(244, 239, 230, 0.6); }
 
 /* retro CRT set — power it on, then press the channel knob to browse cameras */
 
@@ -534,7 +530,7 @@ img { max-width: 100%; display: block; }
 
 .tv__screen-frame {
   position: relative;
-  background: var(--noir);
+  background: var(--tv-bezel);
   border-radius: 38px;
   padding: 18px;
 }
@@ -837,11 +833,9 @@ img { max-width: 100%; display: block; }
 .gallery {
   padding: 1rem 1.5rem 6rem;
   background: var(--noir);
-  color: var(--cream);
+  color: var(--ink);
 }
 .gallery__inner { max-width: 1080px; margin: 0 auto; }
-.gallery .section-head h2 { color: var(--cream); }
-.gallery .section-head p { color: rgba(244, 239, 230, 0.6); }
 
 .gallery__camera {
   scroll-margin-top: 100px;
@@ -856,9 +850,8 @@ img { max-width: 100%; display: block; }
   font-size: clamp(1.05rem, 2.2vw, 1.35rem);
   letter-spacing: 0.01em;
   margin: 0 0 1.4rem;
-  color: var(--accent, var(--cream));
+  color: var(--accent, var(--ink));
 }
-.gallery__camera-title--light { color: var(--pop-yellow); }
 
 .gallery__camera-grid {
   display: grid;
@@ -979,12 +972,7 @@ img { max-width: 100%; display: block; }
   padding: 3rem 1.5rem;
   text-align: center;
   background: var(--noir);
-  color: var(--cream);
+  color: var(--ink);
 }
-.footer img {
-  height: 22px;
-  background: var(--cream);
-  border-radius: 8px;
-  padding: 5px 7px;
-}
-.footer p { font-size: 0.8rem; color: rgba(244, 239, 230, 0.5); margin: 0; }
+.footer img { height: 22px; }
+.footer p { font-size: 0.8rem; color: rgba(42, 36, 32, 0.5); margin: 0; }
