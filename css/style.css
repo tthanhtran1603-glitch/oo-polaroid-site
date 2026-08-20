@@ -635,8 +635,8 @@ img { max-width: 100%; display: block; }
 }
 
 .book__hero-icon {
-  width: 108px;
-  height: 92px;
+  width: 168px;
+  height: 148px;
   margin: 0 auto 1rem;
   border-radius: 14px;
   display: flex;
@@ -644,7 +644,7 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   padding: 14px;
 }
-.book__hero-icon svg { width: 100%; height: auto; }
+.book__hero-icon img { width: 100%; height: 100%; object-fit: contain; }
 .book__hero-icon--chrome { background: var(--chrome-tint); }
 .book__hero-icon--honey { background: var(--honey-tint); }
 .book__hero-icon--beige { background: var(--beige-tint); }
