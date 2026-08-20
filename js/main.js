@@ -14,50 +14,43 @@ navLinks.querySelectorAll("a").forEach((link) =>
   })
 );
 
-// retro TV — power it on, then flip through cameras like changing channels
-const tv = document.querySelector(".tv");
-const tvScreen = document.getElementById("tvScreen");
-if (tv && tvScreen) {
-  const channels = Array.from(document.querySelectorAll(".tv__channel"));
-  const lights = Array.from(document.querySelectorAll(".tv__light"));
-  const powerBtn = document.getElementById("tvPowerBtn");
-  const channelBtn = document.getElementById("tvChannelBtn");
+// camera folders — click a folder to open its popup with photos + pricing
+const folders = document.querySelectorAll(".folder");
+const popups = document.querySelectorAll(".camera-popup");
 
-  let isOn = false;
-  let channelIndex = 0;
-
-  function flicker() {
-    tvScreen.classList.remove("is-flickering");
-    void tvScreen.offsetWidth; // restart the CSS animation on repeat clicks
-    tvScreen.classList.add("is-flickering");
-  }
-
-  function render() {
-    tv.classList.toggle("is-on", isOn);
-    if (powerBtn) powerBtn.classList.toggle("is-on", isOn);
-    channels.forEach((ch, i) => ch.classList.toggle("is-active", isOn && i === channelIndex));
-    lights.forEach((light, i) => light.classList.toggle("is-lit", isOn && i === channelIndex));
-  }
-
-  if (powerBtn) {
-    powerBtn.addEventListener("click", () => {
-      isOn = !isOn;
-      flicker();
-      render();
-    });
-  }
-
-  if (channelBtn) {
-    channelBtn.addEventListener("click", () => {
-      if (!isOn) return;
-      channelIndex = (channelIndex + 1) % channels.length;
-      flicker();
-      render();
-    });
-  }
-
-  render();
+function openPopup(id) {
+  const popup = document.getElementById(id);
+  if (!popup) return;
+  popup.classList.add("is-open");
+  document.body.classList.add("modal-open");
 }
+
+function closePopup(popup) {
+  popup.classList.remove("is-open");
+  if (!document.querySelector(".camera-popup.is-open")) {
+    document.body.classList.remove("modal-open");
+  }
+}
+
+folders.forEach((folder) =>
+  folder.addEventListener("click", () => openPopup(folder.dataset.popup))
+);
+
+popups.forEach((popup) => {
+  const closeBtn = popup.querySelector(".camera-popup__close");
+  if (closeBtn) closeBtn.addEventListener("click", () => closePopup(popup));
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) closePopup(popup);
+  });
+  const sampleLink = popup.querySelector(".camera-popup__samplelink");
+  if (sampleLink) sampleLink.addEventListener("click", () => closePopup(popup));
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  const openPopupEl = document.querySelector(".camera-popup.is-open");
+  if (openPopupEl) closePopup(openPopupEl);
+});
 
 // site-wide language toggle (EN / VI)
 const langButtons = document.querySelectorAll(".lang-toggle__btn");
