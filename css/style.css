@@ -543,9 +543,9 @@ img { max-width: 100%; display: block; }
 
 .folder-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.8rem 1.4rem;
-  max-width: 760px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 2rem 1.8rem;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -582,7 +582,7 @@ img { max-width: 100%; display: block; }
   border: 2px solid var(--ink);
   border-radius: 3px 16px 16px 16px;
   padding: 1.3rem 1.1rem 1rem;
-  min-height: 152px;
+  min-height: 176px;
   box-shadow: 0 5px 0 rgba(42, 36, 32, 0.12);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -698,6 +698,12 @@ body.modal-open { overflow: hidden; }
   padding: 8px;
 }
 .camera-popup__media img.camera-popup__shot { object-fit: cover; padding: 0; }
+.camera-popup__media img.camera-popup__product {
+  background: none;
+  border: none;
+  padding: 0;
+  filter: drop-shadow(0 10px 16px rgba(42, 36, 32, 0.16));
+}
 
 .camera-popup__desc {
   font-size: 0.86rem;
@@ -750,6 +756,20 @@ body.modal-open { overflow: hidden; }
   .camera-popup__media { grid-template-columns: 1fr 1fr 1fr; }
   .camera-popup__media img { height: 92px; }
   .camera-popup__price-row { font-size: 0.7rem; grid-template-columns: minmax(76px, 1.3fr) repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 641px) {
+  .camera-popup__panel { max-width: 760px; padding: 2.2rem 2.4rem 2rem; }
+  .camera-popup__media { gap: 1.1rem; margin-bottom: 1.3rem; }
+  .camera-popup__media img { height: 240px; }
+  .camera-popup__desc { font-size: 0.98rem; margin-bottom: 1.4rem; }
+  .camera-popup__price-table { margin-bottom: 1.3rem; }
+  .camera-popup__price-row { font-size: 0.9rem; padding: 0.6rem 0; }
+  .camera-popup__price-row--head { font-size: 0.7rem; }
+  .camera-popup__price-film { font-size: 0.9rem; }
+  .camera-popup__footer { font-size: 0.82rem; }
+  .camera-popup__meta { font-size: 0.8rem; }
+  .camera-popup__samplelink { font-size: 0.85rem; }
 }
 
 .camera-card__filmname {
