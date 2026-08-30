@@ -51,7 +51,7 @@
   --honey-tint: #F0E3CC;
   --walnut: #4A2F1C;       /* dark wood — TV set case */
   --tv-bezel: #17110D;     /* near-black — TV screen bezel only, stays dark regardless of page theme */
-  --noir: #FFF8E6;         /* same warm ivory as --cream — nav / marquee / footer surfaces, one continuous canvas */
+  --noir: #FFF8E6;         /* same warm ivory as --cream — nav / footer surfaces, one continuous canvas */
   --pop-yellow: #EFBD48;   /* accent — mustard, for filled badges/dots */
   --pop-yellow-ink: #A9791E; /* darker gold, for when yellow is used as raw text on light backgrounds */
   --pop-pink: #EFB6B0;     /* accent — soft coral pink */
@@ -91,35 +91,6 @@ h1 { font-weight: 800; }
 a { color: inherit; }
 
 img { max-width: 100%; display: block; }
-
-/* ---------- marquee ---------- */
-
-.marquee {
-  color: var(--ink);
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 0.55rem 0;
-}
-.marquee__track {
-  display: inline-flex;
-  gap: 1.6rem;
-  animation: marquee-scroll 26s linear infinite;
-}
-.marquee__track span {
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  flex: none;
-}
-.marquee__dot { color: var(--accent, var(--pop-yellow)); font-size: 0.9rem; }
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee__track { animation: none; }
-}
 
 /* ---------- stickers + confetti (pop accents) ---------- */
 
@@ -852,7 +823,9 @@ body.modal-open { overflow: hidden; }
 
 .gallery__camera-grid {
   overflow: hidden;
-  width: 100%;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 .gallery__camera-track {
   display: flex;
