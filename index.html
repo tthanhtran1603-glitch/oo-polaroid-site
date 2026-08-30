@@ -36,9 +36,9 @@
 <header class="hero" id="top">
   <div class="hero__grain" aria-hidden="true"></div>
   <span class="confetti confetti--dot" style="--c: var(--rb-red); top: 2%; left: 3%;" aria-hidden="true"></span>
-  <span class="confetti confetti--plus" style="--c: var(--rb-blue); top: 78%; left: 3%;" aria-hidden="true"></span>
-  <span class="confetti confetti--dot" style="--c: var(--pop-pink); top: 85%; left: 46%;" aria-hidden="true"></span>
-  <span class="confetti confetti--plus" style="--c: var(--pop-yellow); top: 8%; left: 58%;" aria-hidden="true"></span>
+  <span class="confetti confetti--plus" style="--c: rgba(42, 36, 32, 0.18); top: 78%; left: 3%;" aria-hidden="true"></span>
+  <span class="confetti confetti--dot" style="--c: rgba(42, 36, 32, 0.18); top: 85%; left: 46%;" aria-hidden="true"></span>
+  <span class="confetti confetti--plus" style="--c: rgba(42, 36, 32, 0.18); top: 8%; left: 58%;" aria-hidden="true"></span>
   <div class="hero__inner">
     <p class="eyebrow" data-vi="Studio ảnh lấy liền · TP. Hồ Chí Minh">Instant Film Studio · Ho Chi Minh City</p>
     <h1><span data-vi="Một tấm ảnh thật,">A real photograph,</span><br /><span data-vi="không thể chụp lại lần hai.">impossible to take twice.</span></h1>
@@ -90,7 +90,7 @@
   <section class="cameras" id="cameras">
    <div class="cameras__inner">
     <div class="section-head">
-      <div class="story__mark" style="--accent: var(--rb-orange)">02</div>
+      <div class="story__mark" style="--accent: var(--rb-red)">02</div>
       <h2 data-vi="Máy &amp; Menu">Cameras &amp; Menu</h2>
       <p data-vi="Bấm vào một máy để xem ảnh và bảng giá.">Click a camera to see its photos and pricing.</p>
     </div>
@@ -106,7 +106,7 @@
         </span>
       </button>
 
-      <button type="button" class="folder" style="--folder-color: var(--rb-orange)" data-popup="popup-sun660" aria-haspopup="dialog">
+      <button type="button" class="folder" style="--folder-color: var(--rb-red)" data-popup="popup-sun660" aria-haspopup="dialog">
         <span class="folder__tab" aria-hidden="true"></span>
         <span class="folder__body">
           <span class="folder__icon" aria-hidden="true"></span>
@@ -116,7 +116,7 @@
         </span>
       </button>
 
-      <button type="button" class="folder" style="--folder-color: var(--pop-yellow); --folder-ink: var(--ink)" data-popup="popup-impulse" aria-haspopup="dialog">
+      <button type="button" class="folder" style="--folder-color: var(--rb-red)" data-popup="popup-impulse" aria-haspopup="dialog">
         <span class="folder__tab" aria-hidden="true"></span>
         <span class="folder__body">
           <span class="folder__icon" aria-hidden="true"></span>
@@ -126,7 +126,7 @@
         </span>
       </button>
 
-      <button type="button" class="folder" style="--folder-color: var(--rb-green)" data-popup="popup-now3" aria-haspopup="dialog">
+      <button type="button" class="folder" style="--folder-color: var(--rb-red)" data-popup="popup-now3" aria-haspopup="dialog">
         <span class="folder__tab" aria-hidden="true"></span>
         <span class="folder__body">
           <span class="folder__icon" aria-hidden="true"></span>
@@ -136,7 +136,7 @@
         </span>
       </button>
 
-      <button type="button" class="folder" style="--folder-color: var(--rb-blue)" data-popup="popup-studioexpress" aria-haspopup="dialog">
+      <button type="button" class="folder" style="--folder-color: var(--rb-red)" data-popup="popup-studioexpress" aria-haspopup="dialog">
         <span class="folder__tab" aria-hidden="true"></span>
         <span class="folder__body">
           <span class="folder__icon" aria-hidden="true"></span>
@@ -191,7 +191,7 @@
    <div class="camera-popup" id="popup-sun660" role="dialog" aria-modal="true" aria-label="Polaroid Sun 660">
     <div class="camera-popup__panel">
       <button type="button" class="camera-popup__close" aria-label="Close" data-vi-label="Đóng">✕</button>
-      <p class="camera-modal__pagelabel" style="--accent: var(--rb-orange)">Polaroid Sun 660</p>
+      <p class="camera-modal__pagelabel" style="--accent: var(--rb-red)">Polaroid Sun 660</p>
       <div class="camera-popup__media">
         <img class="camera-popup__cell camera-popup__product" src="assets/cameras/sun-660-cutout.png" alt="Polaroid Sun 660" loading="lazy" />
         <figure class="camera-popup__cell camera-popup__shotwrap">
@@ -217,6 +217,7 @@
           <span>190,000₫</span><span>370,000₫</span><span>720,000₫</span><span>1,390,000₫</span>
         </div>
       </div>
+      <p class="camera-popup__note" data-vi="* Nhóm từ 4 người trở lên sẽ chuyển sang Phòng Lớn và cần mua thêm 1 pack phim.">* Groups of 4+ move to the Big Room and must purchase 1 extra film pack.</p>
       <div class="camera-popup__footer">
         <span class="camera-popup__meta" data-vi="~10 phút · 1–4 người · máy và phim đã bao gồm">~10 min · 1–4 people · camera &amp; film included</span>
         <a class="camera-popup__samplelink" href="#sample-sun660" data-vi="Xem thêm ảnh mẫu →">See more samples →</a>
@@ -227,7 +228,7 @@
    <div class="camera-popup" id="popup-impulse" role="dialog" aria-modal="true" aria-label="Polaroid Impulse">
     <div class="camera-popup__panel">
       <button type="button" class="camera-popup__close" aria-label="Close" data-vi-label="Đóng">✕</button>
-      <p class="camera-modal__pagelabel camera-modal__pagelabel--light" style="--accent: var(--pop-yellow)">Polaroid Impulse</p>
+      <p class="camera-modal__pagelabel" style="--accent: var(--rb-red)">Polaroid Impulse</p>
       <div class="camera-popup__media">
         <img class="camera-popup__cell camera-popup__product" src="assets/cameras/impulse-cutout.png" alt="Polaroid Impulse" loading="lazy" />
         <figure class="camera-popup__cell camera-popup__shotwrap">
@@ -253,6 +254,7 @@
           <span>190,000₫</span><span>370,000₫</span><span>720,000₫</span><span>1,390,000₫</span>
         </div>
       </div>
+      <p class="camera-popup__note" data-vi="* Nhóm từ 4 người trở lên sẽ chuyển sang Phòng Lớn và cần mua thêm 1 pack phim.">* Groups of 4+ move to the Big Room and must purchase 1 extra film pack.</p>
       <div class="camera-popup__footer">
         <span class="camera-popup__meta" data-vi="~10 phút · 1–4 người · máy và phim đã bao gồm">~10 min · 1–4 people · camera &amp; film included</span>
         <a class="camera-popup__samplelink" href="#sample-impulse" data-vi="Xem thêm ảnh mẫu →">See more samples →</a>
@@ -263,7 +265,7 @@
    <div class="camera-popup" id="popup-now3" role="dialog" aria-modal="true" aria-label="Polaroid Now+ Gen 3">
     <div class="camera-popup__panel">
       <button type="button" class="camera-popup__close" aria-label="Close" data-vi-label="Đóng">✕</button>
-      <p class="camera-modal__pagelabel" style="--accent: var(--rb-green)">Polaroid Now+ Gen 3</p>
+      <p class="camera-modal__pagelabel" style="--accent: var(--rb-red)">Polaroid Now+ Gen 3</p>
       <div class="camera-popup__media">
         <img class="camera-popup__cell camera-popup__product" src="assets/cameras/now-3.webp" alt="Polaroid Now+ Gen 3" loading="lazy" />
         <figure class="camera-popup__cell camera-popup__shotwrap">
@@ -297,6 +299,7 @@
           <span>190,000₫</span><span>370,000₫</span><span>720,000₫</span><span>1,390,000₫</span>
         </div>
       </div>
+      <p class="camera-popup__note" data-vi="* Nhóm từ 4 người trở lên sẽ chuyển sang Phòng Lớn và cần mua thêm 1 pack phim.">* Groups of 4+ move to the Big Room and must purchase 1 extra film pack.</p>
       <div class="camera-popup__footer">
         <span class="camera-popup__meta" data-vi="~10 phút · 1–6 người · máy và phim đã bao gồm">~10 min · 1–6 people · camera &amp; film included</span>
         <a class="camera-popup__samplelink" href="#sample-now3" data-vi="Xem thêm ảnh mẫu →">See more samples →</a>
@@ -307,7 +310,7 @@
    <div class="camera-popup" id="popup-studioexpress" role="dialog" aria-modal="true" aria-label="Polaroid Studio Express 403">
     <div class="camera-popup__panel">
       <button type="button" class="camera-popup__close" aria-label="Close" data-vi-label="Đóng">✕</button>
-      <p class="camera-modal__pagelabel" style="--accent: var(--rb-blue)">Polaroid Studio Express 403</p>
+      <p class="camera-modal__pagelabel" style="--accent: var(--rb-red)">Polaroid Studio Express 403</p>
       <div class="camera-popup__media">
         <img class="camera-popup__cell camera-popup__product" src="assets/cameras/studio-express-cutout.png" alt="Polaroid Studio Express 403" loading="lazy" />
         <figure class="camera-popup__cell camera-popup__shotwrap">
@@ -340,7 +343,7 @@
   <section class="gallery" id="gallery">
    <div class="gallery__inner">
     <div class="section-head">
-      <div class="story__mark story__mark--light" style="--accent: var(--pop-yellow)">03</div>
+      <div class="story__mark" style="--accent: var(--rb-red)">03</div>
       <h2 data-vi="Ảnh thật, chưa chỉnh sửa">Real photos, unedited</h2>
       <p data-vi="Ảnh mẫu thật từ mỗi dòng máy — đúng màu, đúng hạt phim, không lọc.">Real samples from every camera we shoot with — true color, true grain, no filters.</p>
     </div>
@@ -362,7 +365,7 @@
     </div>
 
     <div class="gallery__camera" id="sample-sun660">
-      <h3 class="gallery__camera-title" style="--accent: var(--rb-orange)" data-vi="Ảnh mẫu · Polaroid Sun 660">Samples by Polaroid Sun 660</h3>
+      <h3 class="gallery__camera-title" style="--accent: var(--rb-red)" data-vi="Ảnh mẫu · Polaroid Sun 660">Samples by Polaroid Sun 660</h3>
       <div class="gallery__camera-grid">
         <div class="gallery__camera-track">
           <img src="assets/samples/sample-02.jpg" alt="Polaroid photo taken with Polaroid Sun 660 at O-O Polaroid" loading="lazy" />
@@ -378,7 +381,7 @@
     </div>
 
     <div class="gallery__camera" id="sample-impulse">
-      <h3 class="gallery__camera-title" style="--accent: var(--pop-yellow-ink)" data-vi="Ảnh mẫu · Polaroid Impulse">Samples by Polaroid Impulse</h3>
+      <h3 class="gallery__camera-title" style="--accent: var(--rb-red)" data-vi="Ảnh mẫu · Polaroid Impulse">Samples by Polaroid Impulse</h3>
       <div class="gallery__camera-grid">
         <div class="gallery__camera-track">
           <img src="assets/samples/sample-03.jpg" alt="Polaroid photo taken with Polaroid Impulse at O-O Polaroid" loading="lazy" />
@@ -394,7 +397,7 @@
     </div>
 
     <div class="gallery__camera" id="sample-now3">
-      <h3 class="gallery__camera-title" style="--accent: var(--rb-green)" data-vi="Ảnh mẫu · Polaroid Now+ Gen 3">Samples by Polaroid Now+ Gen 3</h3>
+      <h3 class="gallery__camera-title" style="--accent: var(--rb-red)" data-vi="Ảnh mẫu · Polaroid Now+ Gen 3">Samples by Polaroid Now+ Gen 3</h3>
       <div class="gallery__camera-grid">
         <div class="gallery__camera-track">
           <img src="assets/samples/sample-04.jpg" alt="Polaroid photo taken with Polaroid Now+ Gen 3 at O-O Polaroid" loading="lazy" />
@@ -410,7 +413,7 @@
     </div>
 
     <div class="gallery__camera" id="sample-studioexpress">
-      <h3 class="gallery__camera-title" style="--accent: var(--rb-blue)" data-vi="Ảnh mẫu · Polaroid Studio Express 403">Samples by Polaroid Studio Express 403</h3>
+      <h3 class="gallery__camera-title" style="--accent: var(--rb-red)" data-vi="Ảnh mẫu · Polaroid Studio Express 403">Samples by Polaroid Studio Express 403</h3>
       <div class="gallery__camera-grid">
         <div class="gallery__camera-track">
           <img src="assets/samples/sample-05.jpg" alt="Polaroid photo taken with Polaroid Studio Express 403 at O-O Polaroid" loading="lazy" />
@@ -429,7 +432,7 @@
 
   <section class="space" id="space">
     <div class="section-head">
-      <div class="story__mark" style="--accent: var(--rb-green)">04</div>
+      <div class="story__mark" style="--accent: var(--rb-red)">04</div>
       <h2 data-vi="Ba buồng riêng, một phòng lớn">Three booths, one big room</h2>
     </div>
     <div class="space__grid">

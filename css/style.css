@@ -417,7 +417,6 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1.2rem;
   box-shadow: 0 6px 14px rgba(42, 36, 32, 0.18);
 }
-.story__mark--light { color: var(--ink); }
 
 .section-head {
   max-width: 640px;
@@ -729,6 +728,13 @@ body.modal-open { overflow: hidden; }
 .camera-popup__price-film { font-weight: 700; color: var(--ink); font-size: 0.78rem; }
 .camera-popup__price-film .camera-card__soon { display: block; font-weight: 400; font-size: 0.7rem; }
 
+.camera-popup__note {
+  font-size: 0.76rem;
+  font-style: italic;
+  color: rgba(42, 36, 32, 0.55);
+  margin: -0.3rem 0 1rem;
+}
+
 .camera-popup__footer {
   display: flex;
   align-items: center;
@@ -795,8 +801,6 @@ body.modal-open { overflow: hidden; }
   font-weight: 600;
   letter-spacing: 0.03em;
 }
-.camera-modal__pagelabel--light { color: var(--ink); }
-
 /* ---------- gallery ---------- */
 
 .gallery {
