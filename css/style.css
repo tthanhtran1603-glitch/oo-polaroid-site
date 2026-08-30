@@ -36,10 +36,10 @@
 
 :root {
   /* O-O Polaroid — basic black/white/cream palette, no accent color */
-  --cream: #FFFFFF;        /* white — paper / content sections */
+  --cream: #FFF8E6;        /* warm beige — paper / content sections */
   --beige: #E0CBAE;        /* neutral warm tint — used sparingly for card backgrounds */
   --beige-tint: #EFE2CC;
-  --noir: #FFFFFF;         /* same white as --cream — nav / footer surfaces, one continuous canvas */
+  --noir: #FFF8E6;         /* same beige as --cream — nav / footer surfaces, one continuous canvas */
   --ink: #2A2420;
   --serif: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -83,7 +83,7 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 248, 230, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(42, 36, 32, 0.08);
   color: var(--ink);
@@ -414,9 +414,12 @@ img { max-width: 100%; display: block; }
 
 .cameras {
   padding: 5rem 1.5rem 6rem;
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--cream);
 }
 .cameras__inner { max-width: 1080px; margin: 0 auto; }
+.cameras .section-head p { color: rgba(255, 255, 255, 0.65); }
+.cameras .story__mark { background: var(--cream); color: var(--ink); }
 
 /* camera folders — click one to open a compact popup with photos + pricing */
 
