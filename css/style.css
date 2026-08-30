@@ -633,6 +633,9 @@ body.modal-open { overflow: hidden; }
   height: 100%;
   object-fit: cover;
 }
+.camera-popup__media--pair .camera-popup__shot {
+  object-fit: contain;
+}
 .camera-popup__shotwrap figcaption {
   position: absolute;
   left: 0;
