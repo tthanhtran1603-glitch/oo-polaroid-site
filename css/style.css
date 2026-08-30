@@ -35,31 +35,11 @@
 }
 
 :root {
-  /* O-O Polaroid — warm playful palette (refreshed from Rayo / nujiao refs) */
+  /* O-O Polaroid — basic black/white/cream palette, no accent color */
   --cream: #FFFFFF;        /* white — paper / content sections */
-  --beige: #E0CBAE;
+  --beige: #E0CBAE;        /* neutral warm tint — used sparingly for card backgrounds */
   --beige-tint: #EFE2CC;
-  --burgundy: #7B2737;     /* kept as one deep signature band (Visit) */
-  --burgundy-dark: #611F2C;
-  --burgundy-tint: #EFDCDF;
-  --olive: #77765E;
-  --olive-tint: #E7E5D8;
-  --chrome: #C4C6C7;
-  --chrome-dark: #A9ABAC;
-  --chrome-tint: #EDEEEE;
-  --honey: #B88752;
-  --honey-tint: #F0E3CC;
-  --walnut: #4A2F1C;       /* dark wood — TV set case */
-  --tv-bezel: #17110D;     /* near-black — TV screen bezel only, stays dark regardless of page theme */
   --noir: #FFFFFF;         /* same white as --cream — nav / footer surfaces, one continuous canvas */
-  --pop-yellow: #EFBD48;   /* accent — mustard, for filled badges/dots */
-  --pop-yellow-ink: #A9791E; /* darker gold, for when yellow is used as raw text on light backgrounds */
-  --pop-pink: #EFB6B0;     /* accent — soft coral pink */
-  --rb-red: #C23B26;       /* accent — terracotta red (also the primary CTA color) */
-  --rb-red-dark: #9E2F1D;
-  --rb-orange: #C97A46;    /* accent — warm clay */
-  --rb-green: #6C8B5E;     /* accent — soft sage */
-  --rb-blue: #6E93B7;      /* accent — dusty sky blue */
   --ink: #2A2420;
   --serif: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -91,74 +71,6 @@ h1 { font-weight: 800; }
 a { color: inherit; }
 
 img { max-width: 100%; display: block; }
-
-/* ---------- stickers + confetti (pop accents) ---------- */
-
-.sticker {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  text-align: center;
-  z-index: 5;
-}
-.sticker--burst {
-  top: -22px;
-  right: -6px;
-  width: 88px;
-  height: 88px;
-  background: var(--rb-red);
-  clip-path: polygon(50% 0%, 61% 15%, 78% 6%, 80% 25%, 98% 28%, 89% 45%, 100% 60%,
-    83% 65%, 86% 84%, 68% 78%, 60% 96%, 50% 80%, 40% 96%, 32% 78%, 14% 84%,
-    17% 65%, 0% 60%, 11% 45%, 2% 28%, 20% 25%, 22% 6%, 39% 15%);
-  transform: rotate(8deg);
-  box-shadow: 0 10px 20px rgba(24, 18, 14, 0.28);
-}
-.sticker--burst .sticker__mark {
-  font-family: var(--serif);
-  font-size: 0.92rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  color: var(--cream);
-  transform: rotate(-8deg);
-}
-.sticker--face {
-  bottom: 20px;
-  left: -18px;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  background: var(--rb-blue);
-  color: var(--cream);
-  font-size: 1.3rem;
-  transform: rotate(-8deg);
-  box-shadow: 0 8px 16px rgba(24, 18, 14, 0.24);
-}
-.sticker--spark {
-  top: 46%;
-  left: -20px;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  background: var(--pop-yellow);
-  color: var(--ink);
-  font-size: 1rem;
-  transform: rotate(16deg);
-  box-shadow: 0 8px 16px rgba(24, 18, 14, 0.24);
-}
-
-.confetti { position: absolute; pointer-events: none; z-index: 0; }
-.confetti--dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
-.confetti--plus { width: 15px; height: 15px; }
-.confetti--plus::before,
-.confetti--plus::after {
-  content: "";
-  position: absolute;
-  background: var(--c);
-}
-.confetti--plus::before { width: 100%; height: 3px; top: 50%; left: 0; transform: translateY(-50%); }
-.confetti--plus::after { width: 3px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
 
 /* ---------- nav ---------- */
 
@@ -192,7 +104,7 @@ img { max-width: 100%; display: block; }
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--rb-red);
+  background: var(--ink);
   flex: none;
 }
 
@@ -258,11 +170,9 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 5rem 1.5rem 6rem;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 2rem;
+  padding: 6.5rem 1.5rem 7rem;
+  display: flex;
+  justify-content: center;
   max-width: 1320px;
   margin: 0 auto;
 }
@@ -272,28 +182,27 @@ img { max-width: 100%; display: block; }
   inset: 0;
   pointer-events: none;
   opacity: 0.06;
-  background-image: radial-gradient(circle, #7B2737 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--ink) 1px, transparent 1px);
   background-size: 3px 3px;
 }
 
-.hero__inner { position: relative; z-index: 1; max-width: 620px; }
+.hero__inner { position: relative; z-index: 1; max-width: 620px; text-align: center; }
 
 .eyebrow {
   font-size: 0.78rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--rb-red);
+  color: rgba(42, 36, 32, 0.6);
   margin: 0 0 1rem;
 }
 .eyebrow::before {
   content: "";
   display: block;
   width: 42px;
-  height: 6px;
-  border-radius: 3px;
-  background: var(--rb-red);
-  margin-bottom: 1rem;
+  height: 2px;
+  background: var(--ink);
+  margin: 0 auto 1.2rem;
 }
 
 .hero h1 {
@@ -302,20 +211,20 @@ img { max-width: 100%; display: block; }
 }
 
 .hero__lede {
-  margin: 1.4rem 0 2rem;
+  margin: 1.4rem auto 2rem;
   font-size: 1.05rem;
   max-width: 480px;
   color: rgba(42, 36, 32, 0.75);
 }
 
-.hero__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+.hero__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; }
 
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.6rem;
-  border-radius: 999px;
+  padding: 0.85rem 1.7rem;
+  border-radius: 4px;
   font-size: 0.92rem;
   font-weight: 500;
   text-decoration: none;
@@ -323,11 +232,11 @@ img { max-width: 100%; display: block; }
   border: 1px solid transparent;
   transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
-.btn:hover { transform: translateY(-2px) rotate(-1deg) scale(1.03); }
-.btn--dark { background: var(--rb-red); color: var(--cream); }
-.btn--dark:hover { background: var(--rb-red-dark); }
-.btn--ghost { background: transparent; border-color: rgba(42, 36, 32, 0.25); color: var(--ink); }
-.btn--ghost:hover { background: var(--beige-tint); }
+.btn:hover { transform: translateY(-2px); }
+.btn--dark { background: var(--ink); color: var(--cream); }
+.btn--dark:hover { background: #000; }
+.btn--ghost { background: transparent; border-color: rgba(42, 36, 32, 0.35); color: var(--ink); }
+.btn--ghost:hover { background: rgba(42, 36, 32, 0.05); }
 
 /* washi-tape accent, reused on hero + gallery photos */
 .hero__tape {
@@ -487,7 +396,7 @@ img { max-width: 100%; display: block; }
   transition: background 0.2s ease, color 0.2s ease;
 }
 .lang-toggle__btn.is-active {
-  background: var(--burgundy);
+  background: var(--ink);
   color: var(--cream);
 }
 
@@ -780,7 +689,7 @@ body.modal-open { overflow: hidden; }
   margin: 0.7rem 0 0.3rem;
   font-weight: 600;
   font-size: 0.82rem;
-  color: var(--burgundy);
+  color: var(--ink);
 }
 .camera-card__filmname:first-child { margin-top: 0; }
 
@@ -888,7 +797,7 @@ body.modal-open { overflow: hidden; }
   border-radius: 16px;
   padding: 2rem;
 }
-.space__card:nth-child(2) { background: var(--burgundy); color: var(--cream); }
+.space__card:nth-child(2) { background: var(--ink); color: var(--cream); }
 .space__num {
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -923,7 +832,9 @@ body.modal-open { overflow: hidden; }
 
 /* ---------- visit ---------- */
 
-.visit { background: var(--burgundy); color: var(--cream); padding: 5rem 1.5rem; }
+.visit { background: var(--ink); color: var(--cream); padding: 5rem 1.5rem; }
+.visit .btn--dark { background: var(--cream); color: var(--ink); }
+.visit .btn--dark:hover { background: #fff; }
 .visit__inner { max-width: 640px; margin: 0 auto; text-align: center; }
 .visit h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
 .visit p { color: rgba(244, 239, 230, 0.75); margin: 0.8rem 0 2rem; }
