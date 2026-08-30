@@ -36,7 +36,7 @@
 
 :root {
   /* O-O Polaroid — warm playful palette (refreshed from Rayo / nujiao refs) */
-  --cream: #FFF8E6;        /* warm ivory — paper / content sections (Latte Silk) */
+  --cream: #FFFFFF;        /* white — paper / content sections */
   --beige: #E0CBAE;
   --beige-tint: #EFE2CC;
   --burgundy: #7B2737;     /* kept as one deep signature band (Visit) */
@@ -51,7 +51,7 @@
   --honey-tint: #F0E3CC;
   --walnut: #4A2F1C;       /* dark wood — TV set case */
   --tv-bezel: #17110D;     /* near-black — TV screen bezel only, stays dark regardless of page theme */
-  --noir: #FFF8E6;         /* same warm ivory as --cream — nav / footer surfaces, one continuous canvas */
+  --noir: #FFFFFF;         /* same white as --cream — nav / footer surfaces, one continuous canvas */
   --pop-yellow: #EFBD48;   /* accent — mustard, for filled badges/dots */
   --pop-yellow-ink: #A9791E; /* darker gold, for when yellow is used as raw text on light backgrounds */
   --pop-pink: #EFB6B0;     /* accent — soft coral pink */
@@ -171,7 +171,7 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(255, 248, 230, 0.88);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(42, 36, 32, 0.08);
   color: var(--ink);
@@ -548,8 +548,8 @@ img { max-width: 100%; display: block; }
 .folder__body {
   position: relative;
   display: block;
-  background: var(--folder-color);
-  border: 2px solid var(--ink);
+  background: var(--cream);
+  border: 2px solid var(--folder-color);
   border-radius: 3px 16px 16px 16px;
   padding: 1.3rem 1.1rem 1rem;
   min-height: 176px;
@@ -567,7 +567,7 @@ img { max-width: 100%; display: block; }
   width: 10px;
   height: 10px;
   margin-bottom: 2.1rem;
-  border: 1.5px solid var(--folder-ink, var(--cream));
+  border: 1.5px solid var(--ink);
   border-radius: 2px;
 }
 
@@ -577,7 +577,7 @@ img { max-width: 100%; display: block; }
   font-weight: 800;
   font-size: 1.02rem;
   line-height: 1.25;
-  color: var(--folder-ink, var(--cream));
+  color: var(--ink);
   margin-bottom: 1.6rem;
 }
 
@@ -586,8 +586,8 @@ img { max-width: 100%; display: block; }
   font-size: 0.66rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--folder-ink, var(--cream));
-  opacity: 0.75;
+  color: var(--ink);
+  opacity: 0.6;
 }
 
 .folder__arrow {
@@ -595,7 +595,7 @@ img { max-width: 100%; display: block; }
   right: 1.1rem;
   bottom: 0.9rem;
   font-size: 1rem;
-  color: var(--folder-ink, var(--cream));
+  color: var(--folder-color);
 }
 
 @media (max-width: 640px) {
