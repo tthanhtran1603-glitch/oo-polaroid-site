@@ -431,6 +431,16 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
 }
 
+.folder-grid--compact {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 480px;
+}
+
+.cameras__subhead {
+  margin-top: 4rem;
+}
+.cameras__subhead h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+
 .folder {
   position: relative;
   display: block;
@@ -512,6 +522,30 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 640px) {
   .folder-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem 0.9rem; }
+  .folder-grid--compact { max-width: 100%; }
+}
+
+/* camera showcase — informational display of every camera model, no pricing */
+
+.camera-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1.6rem;
+  margin-top: 2.2rem;
+}
+.camera-showcase__item { margin: 0; text-align: center; }
+.camera-showcase__item img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+}
+.camera-showcase__item figcaption {
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
 /* camera popup — all photos + pricing fit without scrolling */
@@ -569,6 +603,8 @@ body.modal-open { overflow: hidden; }
   gap: 0.7rem;
   margin: 0 0 1rem;
 }
+.camera-popup__media--pair { grid-template-columns: 1fr 1fr; }
+.camera-popup__media--pair .camera-popup__cell { height: 220px; }
 .camera-popup__cell {
   display: block;
   width: 100%;
@@ -618,6 +654,9 @@ body.modal-open { overflow: hidden; }
 }
 
 .camera-popup__price-table { border-top: 1px solid rgba(42, 36, 32, 0.15); margin-bottom: 1rem; }
+.camera-popup__price-table--simple .camera-popup__price-row { grid-template-columns: 1fr auto; }
+.camera-popup__price-table--simple .camera-popup__price-film { font-size: 0.9rem; }
+.camera-popup__price-table--simple .camera-popup__price-row span:last-child { font-family: var(--serif); font-weight: 700; color: var(--ink); }
 .camera-popup__price-row {
   display: grid;
   grid-template-columns: minmax(96px, 1.4fr) repeat(4, minmax(0, 1fr));
@@ -635,7 +674,7 @@ body.modal-open { overflow: hidden; }
   border-bottom: 1px solid rgba(42, 36, 32, 0.15);
   padding-bottom: 0.3rem;
 }
-.camera-popup__price-row span:not(:first-child) { text-align: right; font-family: var(--serif); }
+.camera-popup__price-row span:not(:first-child) { text-align: right; font-family: var(--serif); color: var(--ink); }
 .camera-popup__price-row--head span:not(:first-child) { font-family: var(--sans); }
 .camera-popup__price-film { font-weight: 700; color: var(--ink); font-size: 0.78rem; }
 .camera-popup__price-film .camera-card__soon { display: block; font-weight: 400; font-size: 0.7rem; }
