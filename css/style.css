@@ -739,9 +739,7 @@ body.modal-open { overflow: hidden; }
 
 .gallery__camera-grid {
   overflow: hidden;
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
 }
 .gallery__camera-track {
   display: flex;
