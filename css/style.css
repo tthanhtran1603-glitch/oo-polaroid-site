@@ -802,15 +802,11 @@ body.modal-open { overflow: hidden; }
 .gallery__camera-grid:hover .gallery__camera-track { animation-play-state: paused; }
 
 .gallery__camera-track img {
-  width: 240px;
+  height: 300px;
+  width: auto;
   flex: none;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
-  border-radius: 3px;
-  background: #fff;
-  padding: 8px 8px 20px;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease;
 }
 .gallery__camera-track img:hover { transform: translateY(-4px); }
@@ -832,7 +828,7 @@ body.modal-open { overflow: hidden; }
 }
 
 @media (max-width: 640px) {
-  .gallery__camera-track img { width: 170px; }
+  .gallery__camera-track img { height: 210px; }
   .gallery__camera-track { gap: 0.8rem; }
 }
 
