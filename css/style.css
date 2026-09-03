@@ -904,12 +904,13 @@ body.modal-open { overflow: hidden; }
 .visit__details {
   margin: 3rem 0 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   text-align: left;
   padding-top: 2rem;
   border-top: 1px solid rgba(244, 239, 230, 0.2);
 }
+.visit__details > div:first-child { grid-column: 1 / -1; }
 .visit__details dt {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -917,10 +918,11 @@ body.modal-open { overflow: hidden; }
   color: rgba(244, 239, 230, 0.55);
   margin-bottom: 0.3rem;
 }
-.visit__details dd { margin: 0; font-size: 0.95rem; }
+.visit__details dd { margin: 0; font-size: 0.95rem; white-space: nowrap; }
 
 @media (max-width: 640px) {
   .visit__details { grid-template-columns: 1fr; text-align: center; }
+  .visit__details dd { font-size: clamp(0.72rem, 3.8vw, 0.95rem); }
 }
 
 /* ---------- footer ---------- */
