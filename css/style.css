@@ -644,6 +644,10 @@ body.modal-open { overflow: hidden; }
 .camera-popup__media--pair .camera-popup__shot {
   object-fit: contain;
 }
+.camera-popup__cell.camera-popup__shotwrap--empty {
+  background: none;
+  border: 1px dashed rgba(42, 36, 32, 0.2);
+}
 .camera-popup__shotwrap figcaption {
   position: absolute;
   left: 0;
