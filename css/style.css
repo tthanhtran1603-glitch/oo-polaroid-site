@@ -759,6 +759,7 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 640px) {
   .camera-popup__panel { padding: 1.3rem 1.2rem 1.2rem; }
   .camera-popup__media { grid-template-columns: 1fr 1fr 1fr; }
+  .camera-popup__media--pair { grid-template-columns: 1fr 1fr; }
   .camera-popup__cell { height: 92px; }
   .camera-popup__shotwrap figcaption { font-size: 0.5rem; padding: 0.3rem 0.4rem 0.24rem; }
   .camera-popup__price-row { font-size: 0.7rem; grid-template-columns: minmax(76px, 1.3fr) repeat(4, minmax(0, 1fr)); }
