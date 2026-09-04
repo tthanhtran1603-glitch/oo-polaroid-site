@@ -654,9 +654,22 @@ body.modal-open { overflow: hidden; }
 .camera-popup__cell.camera-popup__shotwrap--fp100c {
   height: auto;
   align-self: start;
+  background: none;
+  border: none;
+  padding: 0;
 }
 .camera-popup__shotwrap--fp100c .camera-popup__shot {
   height: auto;
+}
+.camera-popup__cell.camera-popup__coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: none;
+  border: 1px dashed rgba(42, 36, 32, 0.25);
+  color: rgba(42, 36, 32, 0.45);
+  font-size: 0.85rem;
 }
 .camera-popup__shotwrap figcaption {
   position: absolute;
