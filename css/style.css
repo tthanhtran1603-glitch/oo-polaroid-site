@@ -651,6 +651,13 @@ body.modal-open { overflow: hidden; }
   background: none;
   border: 1px dashed rgba(42, 36, 32, 0.2);
 }
+.camera-popup__cell.camera-popup__shotwrap--fp100c {
+  height: auto;
+  align-self: start;
+}
+.camera-popup__shotwrap--fp100c .camera-popup__shot {
+  height: auto;
+}
 .camera-popup__shotwrap figcaption {
   position: absolute;
   left: 0;
@@ -831,6 +838,30 @@ body.modal-open { overflow: hidden; }
 }
 .gallery__camera-track img:hover { transform: translateY(-4px); }
 
+.gallery__soon-card {
+  height: 300px;
+  width: 220px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  border: 1px dashed rgba(42, 36, 32, 0.25);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: rgba(42, 36, 32, 0.45);
+}
+
+.gallery__coming-soon {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border: 1px dashed rgba(42, 36, 32, 0.25);
+  border-radius: 8px;
+  color: rgba(42, 36, 32, 0.45);
+  font-size: 0.9rem;
+}
+
 @keyframes gallery-marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -849,6 +880,7 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 640px) {
   .gallery__camera-track img { height: 210px; }
+  .gallery__soon-card { height: 210px; width: 160px; font-size: 0.75rem; }
   .gallery__camera-track { gap: 0.8rem; }
 }
 
