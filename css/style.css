@@ -608,12 +608,10 @@ body.modal-open { overflow: hidden; }
 }
 .camera-popup__media--pair { grid-template-columns: 1fr 1fr; }
 .camera-popup__media--pair .camera-popup__cell {
-  height: 260px;
-  background: #fff;
-  border: 1px solid rgba(42, 36, 32, 0.14);
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 8px rgba(42, 36, 32, 0.08);
+  height: 220px;
+  background: none;
+  border: none;
+  padding: 0;
 }
 .camera-popup__cell {
   display: block;
@@ -851,11 +849,6 @@ body.modal-open { overflow: hidden; }
   flex: none;
   object-fit: contain;
   display: block;
-  background: #fff;
-  border: 1px solid rgba(42, 36, 32, 0.14);
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 8px rgba(42, 36, 32, 0.08);
   transition: transform 0.2s ease;
 }
 .gallery__camera-track img:hover { transform: translateY(-4px); }
