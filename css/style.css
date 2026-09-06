@@ -841,6 +841,7 @@ body.modal-open { overflow: hidden; }
   animation: gallery-marquee 24s linear infinite;
 }
 .gallery__camera-grid:hover .gallery__camera-track { animation-play-state: paused; }
+.gallery__camera-track--static { animation: none; width: 100%; }
 
 .gallery__camera-track img {
   height: 300px;
