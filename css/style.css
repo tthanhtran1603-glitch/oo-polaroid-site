@@ -991,7 +991,7 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 640px) {
   .visit__details { grid-template-columns: 1fr; text-align: center; }
-  .visit__details dd { font-size: clamp(0.72rem, 3.8vw, 0.95rem); }
+  .visit__details dd { font-size: clamp(0.72rem, 3.8vw, 0.95rem); white-space: normal; }
 }
 
 /* ---------- footer ---------- */
