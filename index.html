@@ -162,11 +162,21 @@
           <span class="folder__arrow" aria-hidden="true">→</span>
         </span>
       </button>
+
+      <button type="button" class="folder folder--oos" data-popup="popup-fp100c" aria-haspopup="dialog">
+        <span class="folder__tab" aria-hidden="true"></span>
+        <span class="folder__body">
+          <span class="folder__icon" aria-hidden="true"></span>
+          <span class="folder__name">FP100C (Peel-Apart) <span class="camera-popup__oos-tag" data-vi="Hết hàng">Out of stock</span></span>
+          <span class="folder__meta" data-vi="10 phút · 1–2 người">10 min · 1–2 people</span>
+          <span class="folder__arrow" aria-hidden="true">→</span>
+        </span>
+      </button>
     </div>
 
     <div class="section-head cameras__subhead">
       <h3 data-vi="Muốn tự chọn máy?">Prefer to pick your own camera?</h3>
-      <p data-vi="3 dòng máy này cho bạn chọn đúng máy mình thích, không có combo.">These three let you choose the exact camera — no combo bundles.</p>
+      <p data-vi="2 dòng máy này cho bạn chọn đúng máy mình thích, không có combo.">These two let you choose the exact camera — no combo bundles.</p>
     </div>
 
     <div class="folder-grid folder-grid--compact">
@@ -180,22 +190,12 @@
         </span>
       </button>
 
-      <button type="button" class="folder" data-popup="popup-studioexpress" aria-haspopup="dialog">
+      <button type="button" class="folder" data-popup="popup-miniportrait" aria-haspopup="dialog">
         <span class="folder__tab" aria-hidden="true"></span>
         <span class="folder__body">
           <span class="folder__icon" aria-hidden="true"></span>
-          <span class="folder__name">Polaroid Studio Express 4 Frames</span>
-          <span class="folder__meta" data-vi="15 phút · 1–3 người">15 min · 1–3 people</span>
-          <span class="folder__arrow" aria-hidden="true">→</span>
-        </span>
-      </button>
-
-      <button type="button" class="folder" data-popup="popup-studioexpress2" aria-haspopup="dialog">
-        <span class="folder__tab" aria-hidden="true"></span>
-        <span class="folder__body">
-          <span class="folder__icon" aria-hidden="true"></span>
-          <span class="folder__name">Polaroid Studio Express 2 Frames</span>
-          <span class="folder__meta" data-vi="10 phút · 1–2 người">10 min · 1–2 people</span>
+          <span class="folder__name">Polaroid Mini Portrait</span>
+          <span class="folder__meta" data-vi="10–15 phút · 1–3 người">10–15 min · 1–3 people</span>
           <span class="folder__arrow" aria-hidden="true">→</span>
         </span>
       </button>
@@ -322,6 +322,33 @@
     </div>
    </div>
 
+   <div class="camera-popup" id="popup-fp100c" role="dialog" aria-modal="true" aria-label="FP100C (Peel-Apart)">
+    <div class="camera-popup__panel">
+      <button type="button" class="camera-popup__close" aria-label="Close" data-vi-label="Đóng">✕</button>
+      <p class="camera-modal__pagelabel">FP100C (Peel-Apart)</p>
+      <div class="camera-popup__media camera-popup__media--pair">
+        <figure class="camera-popup__cell camera-popup__shotwrap">
+          <img class="camera-popup__shot" src="assets/samples/se4frames-fp100c.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure class="camera-popup__cell camera-popup__shotwrap">
+          <img class="camera-popup__shot" src="assets/samples/se2frames-fp100c.jpg" alt="" loading="lazy" />
+        </figure>
+      </div>
+      <p class="camera-popup__desc" data-vi="Phim bóc tách (peel-apart) cổ điển, cho chất ảnh mộc và tương phản đặc trưng khó tìm thấy ở dòng film nào khác.">The classic peel-apart film — a raw, high-contrast look you won't find in any other film stock.</p>
+      <p class="camera-popup__note" data-vi="* Phim FP100C (Bóc tách) đã ngưng sản xuất từ năm 2016 nên rất khan hiếm và hiện đang hết hàng — khách muốn chụp dòng này vui lòng nhắn fanpage kiểm tra trước khi đến, trang cũng sẽ thông báo khi có hàng trở lại.">* FP100C (Peel-Apart) film has been discontinued since 2016 and is now very scarce — if you'd like to shoot with it, please check with our fanpage before coming in; we'll also post an update here if we get more in stock.</p>
+      <div class="camera-popup__price-table camera-popup__price-table--simple">
+        <div class="camera-popup__price-row camera-popup__price-row--oos">
+          <span class="camera-popup__price-film">FP100C (Peel-Apart)</span>
+          <span class="camera-popup__oos-tag" data-vi="Hết hàng">Out of stock</span>
+        </div>
+      </div>
+      <div class="camera-popup__footer">
+        <span class="camera-popup__meta" data-vi="~10 phút · 1–2 người · máy và phim đã bao gồm">~10 min · 1–2 people · camera &amp; film included</span>
+        <a class="camera-popup__samplelink" href="#sample-fp100c" data-vi="Xem thêm ảnh mẫu →">See more samples →</a>
+      </div>
+    </div>
+   </div>
+
    <div class="camera-popup" id="popup-macro5" role="dialog" aria-modal="true" aria-label="Polaroid SLR 5 MACRO">
     <div class="camera-popup__panel">
       <button type="button" class="camera-popup__close" aria-label="Close" data-vi-label="Đóng">✕</button>
@@ -330,13 +357,12 @@
         <img class="camera-popup__cell camera-popup__product" src="assets/cameras/macro-5-slr-cutout.png" alt="Polaroid SLR 5 MACRO" loading="lazy" />
         <figure class="camera-popup__cell camera-popup__shotwrap camera-popup__shotwrap--fp100c" style="grid-column: span 2;">
           <img class="camera-popup__shot camera-popup__shot--contain" src="assets/samples/macro-05.jpg" alt="" loading="lazy" style="width: 60%; height: auto; margin: 0 auto; display: block;" />
-          <figcaption style="left: 50%; right: auto; width: 60%; transform: translateX(-50%);">i-Type Film</figcaption>
         </figure>
       </div>
       <p class="camera-popup__desc" data-vi="Dòng máy chuyên chụp cận cảnh (Macro). Phóng to chi tiết và bắt trọn từng nét nhỏ nhất như chi tiết hình xăm, ánh mắt hay nụ cười.">Built for extreme close-ups (Macro). Zooms in to capture the smallest details — a tattoo, a look in the eyes, a smile.</p>
       <div class="camera-popup__price-table camera-popup__price-table--simple">
         <div class="camera-popup__price-row">
-          <span class="camera-popup__price-film">Color i-Type Film</span>
+          <span class="camera-popup__price-film" data-vi="1 tấm ảnh">Per photo</span>
           <span>200,000₫</span>
         </div>
       </div>
@@ -347,67 +373,30 @@
     </div>
    </div>
 
-   <div class="camera-popup" id="popup-studioexpress" role="dialog" aria-modal="true" aria-label="Polaroid Studio Express 4 Frames">
+   <div class="camera-popup" id="popup-miniportrait" role="dialog" aria-modal="true" aria-label="Polaroid Mini Portrait">
     <div class="camera-popup__panel">
       <button type="button" class="camera-popup__close" aria-label="Close" data-vi-label="Đóng">✕</button>
-      <p class="camera-modal__pagelabel">Polaroid Studio Express 4 Frames</p>
+      <p class="camera-modal__pagelabel">Polaroid Mini Portrait</p>
       <div class="camera-popup__media">
-        <img class="camera-popup__cell camera-popup__product" src="assets/cameras/studio-express-cutout.png" alt="Polaroid Studio Express 4 Frames" loading="lazy" />
-        <figure class="camera-popup__cell camera-popup__shotwrap camera-popup__shotwrap--fp100c">
+        <img class="camera-popup__cell camera-popup__product" src="assets/cameras/studio-express-cutout.png" alt="Polaroid Mini Portrait" loading="lazy" />
+        <figure class="camera-popup__cell camera-popup__shotwrap camera-popup__shotwrap--fp100c" style="grid-column: span 2;">
           <img class="camera-popup__shot camera-popup__shot--contain" src="assets/samples/wide4frames-01.jpg" alt="" loading="lazy" />
-          <figcaption>Film Wide</figcaption>
-        </figure>
-        <figure class="camera-popup__cell camera-popup__shotwrap camera-popup__shotwrap--fp100c">
-          <img class="camera-popup__shot camera-popup__shot--contain" src="assets/samples/se4frames-fp100c.jpg" alt="" loading="lazy" />
-          <figcaption>FP100C</figcaption>
         </figure>
       </div>
-      <p class="camera-popup__desc" data-vi="Chiếc máy &quot;4 mắt&quot; đặc biệt của studio. Chỉ 4 lần bấm, thu về 4 khung hình với 4 biểu cảm khác nhau trên cùng 1 tấm ảnh.">Our studio's special 4-lens camera. 4 clicks, 4 frames, 4 different expressions — all on one photo.</p>
+      <p class="camera-popup__desc" data-vi="Chiếc máy chụp chân dung mini của studio. Chọn 2 hoặc 4 khung hình với nhiều biểu cảm khác nhau trên cùng 1 tấm ảnh.">Our studio's mini portrait camera. Pick 2 or 4 frames, each with a different expression, all on one photo.</p>
       <div class="camera-popup__price-table camera-popup__price-table--simple">
         <div class="camera-popup__price-row">
-          <span class="camera-popup__price-film">Film Wide</span>
-          <span>250,000₫</span>
-        </div>
-        <div class="camera-popup__price-row camera-popup__price-row--oos">
-          <span class="camera-popup__price-film">FP100C <span class="camera-popup__oos-tag" data-vi="Hết hàng">Out of stock</span></span>
-          <span>490,000₫</span>
-        </div>
-      </div>
-      <p class="camera-popup__note" data-vi="* Phim FP100C (Bóc tách) đã ngưng sản xuất từ năm 2016 nên rất khan hiếm và hiện đang hết hàng — khách muốn chụp dòng này vui lòng nhắn fanpage kiểm tra trước khi đến, trang cũng sẽ thông báo khi có hàng trở lại.">* FP100C (Peel-Apart) film has been discontinued since 2016 and is now very scarce — if you'd like to shoot with it, please check with our fanpage before coming in; we'll also post an update here if we get more in stock.</p>
-      <div class="camera-popup__footer">
-        <span class="camera-popup__meta" data-vi="1–3 người · máy, phim và nhân viên đã bao gồm">1–3 people · camera, film &amp; staff included</span>
-        <a class="camera-popup__samplelink" href="#sample-studioexpress" data-vi="Xem thêm ảnh mẫu →">See more samples →</a>
-      </div>
-    </div>
-   </div>
-
-   <div class="camera-popup" id="popup-studioexpress2" role="dialog" aria-modal="true" aria-label="Polaroid Studio Express 2 Frames">
-    <div class="camera-popup__panel">
-      <button type="button" class="camera-popup__close" aria-label="Close" data-vi-label="Đóng">✕</button>
-      <p class="camera-modal__pagelabel">Polaroid Studio Express 2 Frames</p>
-      <div class="camera-popup__media">
-        <img class="camera-popup__cell camera-popup__product" src="assets/cameras/studio-express-2frame-cutout.png" alt="Polaroid Studio Express 2 Frames" loading="lazy" />
-        <figure class="camera-popup__cell camera-popup__shotwrap camera-popup__shotwrap--fp100c">
-          <img class="camera-popup__shot camera-popup__shot--contain" src="assets/samples/se2frames-fp100c.jpg" alt="" loading="lazy" />
-          <figcaption>FP100C</figcaption>
-        </figure>
-        <div class="camera-popup__cell camera-popup__shotwrap camera-popup__shotwrap--empty" aria-hidden="true"></div>
-      </div>
-      <p class="camera-popup__desc" data-vi="Phiên bản nhỏ gọn hơn của máy studio — 2 khung hình, 2 biểu cảm, trên cùng một tấm ảnh.">A smaller, simpler version of our studio rig. 2 frames, 2 expressions, all on one photo.</p>
-      <div class="camera-popup__price-table camera-popup__price-table--simple">
-        <div class="camera-popup__price-row">
-          <span class="camera-popup__price-film">Film Wide</span>
+          <span class="camera-popup__price-film" data-vi="2 khung hình">2 Frames</span>
           <span>220,000₫</span>
         </div>
-        <div class="camera-popup__price-row camera-popup__price-row--oos">
-          <span class="camera-popup__price-film">FP100C <span class="camera-popup__oos-tag" data-vi="Hết hàng">Out of stock</span></span>
-          <span>450,000₫</span>
+        <div class="camera-popup__price-row">
+          <span class="camera-popup__price-film" data-vi="4 khung hình">4 Frames</span>
+          <span>250,000₫</span>
         </div>
       </div>
-      <p class="camera-popup__note" data-vi="* Phim FP100C (Bóc tách) đã ngưng sản xuất từ năm 2016 nên rất khan hiếm và hiện đang hết hàng — khách muốn chụp dòng này vui lòng nhắn fanpage kiểm tra trước khi đến, trang cũng sẽ thông báo khi có hàng trở lại.">* FP100C (Peel-Apart) film has been discontinued since 2016 and is now very scarce — if you'd like to shoot with it, please check with our fanpage before coming in; we'll also post an update here if we get more in stock.</p>
       <div class="camera-popup__footer">
-        <span class="camera-popup__meta" data-vi="1–2 người · máy, phim và nhân viên đã bao gồm">1–2 people · camera, film &amp; staff included</span>
-        <a class="camera-popup__samplelink" href="#sample-studioexpress2" data-vi="Xem thêm ảnh mẫu →">See more samples →</a>
+        <span class="camera-popup__meta" data-vi="1–3 người · máy, phim và nhân viên đã bao gồm">1–3 people · camera, film &amp; staff included</span>
+        <a class="camera-popup__samplelink" href="#sample-miniportrait" data-vi="Xem thêm ảnh mẫu →">See more samples →</a>
       </div>
     </div>
    </div>
@@ -501,14 +490,14 @@
       </div>
     </div>
 
-    <div class="gallery__camera" id="sample-studioexpress">
-      <h3 class="gallery__camera-title" data-vi="Ảnh mẫu · Film Wide 4 Frames">Samples by Film Wide 4 Frames</h3>
+    <div class="gallery__camera" id="sample-miniportrait">
+      <h3 class="gallery__camera-title" data-vi="Ảnh mẫu · Mini Portrait">Samples by Mini Portrait</h3>
       <div class="gallery__camera-grid">
         <div class="gallery__camera-track">
-          <img src="assets/samples/wide4frames-01.jpg" alt="Polaroid photo taken with Film Wide 4 Frames at O-O Polaroid" loading="lazy" />
-          <img src="assets/samples/wide4frames-03.jpg" alt="Polaroid photo taken with Film Wide 4 Frames at O-O Polaroid" loading="lazy" />
-          <img src="assets/samples/wide4frames-04.jpg" alt="Polaroid photo taken with Film Wide 4 Frames at O-O Polaroid" loading="lazy" />
-          <img src="assets/samples/wide4frames-05.jpg" alt="Polaroid photo taken with Film Wide 4 Frames at O-O Polaroid" loading="lazy" />
+          <img src="assets/samples/wide4frames-01.jpg" alt="Polaroid photo taken with Mini Portrait at O-O Polaroid" loading="lazy" />
+          <img src="assets/samples/wide4frames-03.jpg" alt="Polaroid photo taken with Mini Portrait at O-O Polaroid" loading="lazy" />
+          <img src="assets/samples/wide4frames-04.jpg" alt="Polaroid photo taken with Mini Portrait at O-O Polaroid" loading="lazy" />
+          <img src="assets/samples/wide4frames-05.jpg" alt="Polaroid photo taken with Mini Portrait at O-O Polaroid" loading="lazy" />
           <img src="assets/samples/wide4frames-01.jpg" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/samples/wide4frames-03.jpg" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/samples/wide4frames-04.jpg" alt="" aria-hidden="true" loading="lazy" />
@@ -517,29 +506,14 @@
       </div>
     </div>
 
-    <div class="gallery__camera" id="sample-fp100c-4frames">
-      <h3 class="gallery__camera-title" data-vi="Ảnh mẫu · FP100C 4 Frames">Samples by FP100C 4 Frames</h3>
+    <div class="gallery__camera" id="sample-fp100c">
+      <h3 class="gallery__camera-title" data-vi="Ảnh mẫu · FP100C">Samples by FP100C</h3>
       <div class="gallery__camera-grid">
-        <div class="gallery__camera-track gallery__camera-track--static">
-          <img src="assets/samples/se4frames-fp100c.jpg" alt="Polaroid photo taken with FP100C 4 Frames at O-O Polaroid" loading="lazy" />
-        </div>
-      </div>
-    </div>
-
-    <div class="gallery__camera" id="sample-studioexpress2">
-      <h3 class="gallery__camera-title" data-vi="Ảnh mẫu · Film Wide 2 Frames">Samples by Film Wide 2 Frames</h3>
-      <div class="gallery__camera-grid">
-        <div class="gallery__camera-track gallery__camera-track--static">
-          <div class="gallery__soon-card" data-vi="Ảnh mẫu sắp có">Coming soon</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="gallery__camera" id="sample-fp100c-2frames">
-      <h3 class="gallery__camera-title" data-vi="Ảnh mẫu · FP100C 2 Frames">Samples by FP100C 2 Frames</h3>
-      <div class="gallery__camera-grid">
-        <div class="gallery__camera-track gallery__camera-track--static">
-          <img src="assets/samples/se2frames-fp100c.jpg" alt="Polaroid photo taken with FP100C 2 Frames at O-O Polaroid" loading="lazy" />
+        <div class="gallery__camera-track">
+          <img src="assets/samples/se4frames-fp100c.jpg" alt="Polaroid photo taken with FP100C at O-O Polaroid" loading="lazy" />
+          <img src="assets/samples/se2frames-fp100c.jpg" alt="Polaroid photo taken with FP100C at O-O Polaroid" loading="lazy" />
+          <img src="assets/samples/se4frames-fp100c.jpg" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/samples/se2frames-fp100c.jpg" alt="" aria-hidden="true" loading="lazy" />
         </div>
       </div>
     </div>

@@ -432,8 +432,8 @@ img { max-width: 100%; display: block; }
 }
 
 .folder-grid--compact {
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 720px;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 480px;
 }
 
 .cameras__subhead {
@@ -517,6 +517,9 @@ img { max-width: 100%; display: block; }
   font-size: 1rem;
   color: var(--ink);
 }
+
+.folder--oos .folder__body { opacity: 0.6; }
+.folder--oos .camera-popup__oos-tag { display: block; margin: 0.4rem 0 0; width: fit-content; }
 
 @media (max-width: 640px) {
   .folder-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem 0.9rem; }
@@ -858,6 +861,7 @@ body.modal-open { overflow: hidden; }
 #sample-macro5 .gallery__camera-track { animation-duration: 12s; }
 #sample-itype .gallery__camera-track { animation-duration: 54s; }
 #sample-itypebw .gallery__camera-track { animation-duration: 12s; }
+#sample-fp100c .gallery__camera-track { animation-duration: 12s; }
 
 .gallery__camera-track img {
   height: 300px;
