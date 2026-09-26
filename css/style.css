@@ -844,9 +844,14 @@ body.modal-open { overflow: hidden; }
 }
 
 .gallery__camera-grid {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.gallery__camera-grid::-webkit-scrollbar { display: none; }
+.gallery__camera-grid.is-touched .gallery__camera-track { animation: none !important; }
 .gallery__camera-track {
   display: flex;
   width: max-content;
@@ -937,6 +942,16 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 640px) {
   .gallery__camera-track img { height: 210px; }
   .gallery__soon-card { height: 210px; width: 160px; font-size: 0.75rem; }
+
+  /* Images shrink to 210px (from 300px) on mobile, so scale each duration by the same 0.7
+     ratio to keep px/sec speed matching desktop instead of crawling slower */
+  #sample-round600 .gallery__camera-track { animation-duration: 16.8s; }
+  #sample-macro5 .gallery__camera-track { animation-duration: 12.6s; }
+  #sample-itype .gallery__camera-track { animation-duration: 42s; }
+  #sample-itypebw .gallery__camera-track { animation-duration: 12.6s; }
+  #sample-fp100c .gallery__camera-track { animation-duration: 8.4s; }
+  #sample-color600 .gallery__camera-track { animation-duration: 21s; }
+  #sample-miniportrait .gallery__camera-track { animation-duration: 29.4s; }
   .gallery__camera-track { gap: 0.8rem; }
 }
 

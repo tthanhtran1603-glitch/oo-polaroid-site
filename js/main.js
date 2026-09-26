@@ -52,6 +52,15 @@ document.addEventListener("keydown", (e) => {
   if (openPopupEl) closePopup(openPopupEl);
 });
 
+// gallery marquees — touching one lets you swipe through manually instead of waiting on the auto-scroll
+document.querySelectorAll(".gallery__camera-grid").forEach((grid) => {
+  grid.addEventListener(
+    "touchstart",
+    () => grid.classList.add("is-touched"),
+    { once: true, passive: true }
+  );
+});
+
 // site-wide language toggle (EN / VI)
 const langButtons = document.querySelectorAll(".lang-toggle__btn");
 const translatable = document.querySelectorAll("[data-vi]");
