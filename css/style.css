@@ -853,7 +853,9 @@ body.modal-open { overflow: hidden; }
   gap: 1.1rem;
   animation: gallery-marquee 24s linear infinite;
 }
-.gallery__camera-grid:hover .gallery__camera-track { animation-play-state: paused; }
+@media (hover: hover) {
+  .gallery__camera-grid:hover .gallery__camera-track { animation-play-state: paused; }
+}
 .gallery__camera-track--static { animation: none; width: 100%; }
 
 /* Match marquee speed to Samples by Color 600 Film (24s / 4 photos = 6s per photo) */
