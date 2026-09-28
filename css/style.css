@@ -870,7 +870,7 @@ body.modal-open { overflow: hidden; }
 #sample-itypebw .gallery__camera-track { animation-duration: 18s; }
 #sample-fp100c .gallery__camera-track { animation-duration: 12s; }
 #sample-color600 .gallery__camera-track { animation-duration: 30s; }
-#sample-miniportrait .gallery__camera-track { animation-duration: 42s; }
+#sample-miniportrait .gallery__camera-track { animation-duration: 48s; }
 
 /* FP100C source photos are unusually wide/panoramic — box them so they don't blow out the layout */
 #popup-fp100c .camera-popup__media--pair .camera-popup__cell {
@@ -951,7 +951,7 @@ body.modal-open { overflow: hidden; }
   #sample-itypebw .gallery__camera-track { animation-duration: 12.6s; }
   #sample-fp100c .gallery__camera-track { animation-duration: 8.4s; }
   #sample-color600 .gallery__camera-track { animation-duration: 21s; }
-  #sample-miniportrait .gallery__camera-track { animation-duration: 29.4s; }
+  #sample-miniportrait .gallery__camera-track { animation-duration: 33.6s; }
   .gallery__camera-track { gap: 0.8rem; }
 }
 
