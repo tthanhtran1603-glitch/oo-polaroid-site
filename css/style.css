@@ -865,7 +865,7 @@ body.modal-open { overflow: hidden; }
 
 /* Match marquee speed to Samples by Color 600 Film (24s / 4 photos = 6s per photo) */
 #sample-round600 .gallery__camera-track { animation-duration: 24s; }
-#sample-macro5 .gallery__camera-track { animation-duration: 24s; }
+#sample-macro5 .gallery__camera-track { animation-duration: 36s; }
 #sample-itype .gallery__camera-track { animation-duration: 60s; }
 #sample-itypebw .gallery__camera-track { animation-duration: 18s; }
 #sample-fp100c .gallery__camera-track { animation-duration: 12s; }
@@ -946,7 +946,7 @@ body.modal-open { overflow: hidden; }
   /* Images shrink to 210px (from 300px) on mobile, so scale each duration by the same 0.7
      ratio to keep px/sec speed matching desktop instead of crawling slower */
   #sample-round600 .gallery__camera-track { animation-duration: 16.8s; }
-  #sample-macro5 .gallery__camera-track { animation-duration: 16.8s; }
+  #sample-macro5 .gallery__camera-track { animation-duration: 25.2s; }
   #sample-itype .gallery__camera-track { animation-duration: 42s; }
   #sample-itypebw .gallery__camera-track { animation-duration: 12.6s; }
   #sample-fp100c .gallery__camera-track { animation-duration: 8.4s; }
