@@ -881,12 +881,17 @@ body.modal-open { overflow: hidden; }
   width: 100%;
   object-fit: contain;
 }
+#popup-fp100c2 .camera-popup__media--pair .camera-popup__cell:first-child { width: 270px; height: 220px; }
+#popup-fp100c2 .camera-popup__media--pair .camera-popup__cell:last-child { width: 420px; height: 220px; }
+#popup-fp100c2 .camera-popup__media--pair .camera-popup__shot { width: 100%; object-fit: contain; }
 #sample-fp100c .gallery__camera-track img {
   width: 220px;
   object-fit: contain;
 }
 @media (max-width: 640px) {
   #popup-fp100c .camera-popup__media--pair .camera-popup__cell { width: 140px; }
+  #popup-fp100c2 .camera-popup__media--pair .camera-popup__cell:first-child { width: 100%; height: 220px; }
+  #popup-fp100c2 .camera-popup__media--pair .camera-popup__cell:last-child { width: 100%; height: 130px; }
 }
 
 .gallery__camera-track img {
