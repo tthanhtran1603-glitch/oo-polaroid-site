@@ -432,8 +432,8 @@ img { max-width: 100%; display: block; }
 }
 
 .folder-grid--compact {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 480px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 720px;
 }
 
 .cameras__subhead {
@@ -884,6 +884,7 @@ body.modal-open { overflow: hidden; }
 #popup-fp100c .camera-popup__media--pair .camera-popup__cell { height: 280px; }
 #popup-fp100c .camera-popup__media--pair .camera-popup__cell:first-child { width: 224px; }
 #popup-fp100c .camera-popup__media--pair .camera-popup__cell:last-child { width: 120px; }
+#popup-bigshot .camera-popup__media--pair .camera-popup__cell { height: 300px; }
 #popup-fp100c2 .camera-popup__media--pair .camera-popup__cell:first-child { width: 270px; height: 220px; }
 #popup-fp100c2 .camera-popup__media--pair .camera-popup__cell:last-child { width: 420px; height: 220px; }
 #popup-fp100c2 .camera-popup__media--pair .camera-popup__shot { width: 100%; object-fit: contain; }
@@ -893,6 +894,7 @@ body.modal-open { overflow: hidden; }
 }
 @media (max-width: 640px) {
   #popup-fp100c .camera-popup__media--pair .camera-popup__cell { width: 140px; }
+  #popup-bigshot .camera-popup__media--pair .camera-popup__cell { height: 240px; }
   #popup-fp100c .camera-popup__media--pair .camera-popup__cell { height: 220px; }
   #popup-fp100c .camera-popup__media--pair .camera-popup__cell:first-child { width: 176px; }
   #popup-fp100c .camera-popup__media--pair .camera-popup__cell:last-child { width: 95px; }
